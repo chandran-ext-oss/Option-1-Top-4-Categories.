@@ -1,714 +1,1269 @@
-<!doctype html>
-<html lang="en">
-<head>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Isha Health Solutions brings Ayurveda, Siddha, Allopathy and Yoga together to help you explore care suited to your health needs.">
-<title>Isha Health Solutions Live</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<title>Isha Health Solutions — Option 1a</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
 <style>
-/* System: photographs carry the colour; UI is ink + warm neutrals.
-   One section-header pattern (eyebrow → H2 → lede), one button set, one card radius (20).
-   Type: Manrope headings, Nunito Sans text. Scale 68/46/26/18/16/14/12. 8px spacing grid. */
+/* Layout: square full-width bands of cream and putty divided by hairlines. Photographs sit clean and uncovered;
+   captions in solid blocks beside or beneath them. Every control is a rectangle. One peach-to-orange panel
+   carries the only saturated colour. --surface follows the band, so nested parts need no band-scoped override. */
 :root{
-  --ink:#0F2F24; --ink-2:#3C5148; --muted:#6C8074; --line:#DCE5C8;
-  --paper:#FBFDF3; --stone:#F2F6E1; --stone-2:#E1EAC9; --night:#1B5A43;
-  --on-dark-2:rgba(242,246,225,.8); --line-dark:rgba(255,255,255,.14);
-  --head:'Plus Jakarta Sans',-apple-system,'Segoe UI',sans-serif;
-  --body:'Plus Jakarta Sans',-apple-system,'Segoe UI',sans-serif;--acc:#C8E63C;--acc-d:#9DBA1C;--forest:#0F3F30;--leaf:#2E7D4F;--sage:#7F9C86;
-  --r:28px; --r-sm:16px;
-  --gx:max(24px,env(safe-area-inset-left,0px)); --gr:max(24px,env(safe-area-inset-right,0px));
-  --sec:clamp(72px,9vw,120px);
-  --ease:cubic-bezier(.2,.75,.2,1);
-  color-scheme:light;
-}
+--cream:#FBF6EC;--putty:#EDE6D6;--card:#FFFFFF;--surface:#FBF6EC;
+--ink:#3A2213;--ink2:#6E5A46;
+--orange:#EC671B;--accentInk:#A8450C;--peach:#F9CDA4;
+--deep:#2A1510;--onDeep:#F6EEE1;--onDeep2:#C8B09A;
+--line:#DDD2BE;
+--serif:'Instrument Serif',Georgia,'Times New Roman',serif;
+--sans:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+--cream:#15100C;--putty:#1C1611;--card:#221A14;--surface:#15100C;--ink:#F2E9DB;--ink2:#B6A18B;
+--orange:#EC671B;--accentInk:#F2954A;--peach:#C9763A;--deep:#0E0A07;--onDeep:#F2E9DB;--onDeep2:#B6A18B;
+--line:#3A2C22;color-scheme:dark}}
+:root[data-theme="dark"]{
+--cream:#15100C;--putty:#1C1611;--card:#221A14;--surface:#15100C;--ink:#F2E9DB;--ink2:#B6A18B;
+--orange:#EC671B;--accentInk:#F2954A;--peach:#C9763A;--deep:#0E0A07;--onDeep:#F2E9DB;--onDeep2:#B6A18B;
+--line:#3A2C22;color-scheme:dark}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{color:inherit}
-h1,h2,h3{font-family:var(--head);margin:0;text-wrap:balance}
-.sg2{color:var(--sage)}.dark .sg2,.on-photo .sg2{color:var(--acc)}
-body{background:var(--paper)}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.62 var(--sans)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--cream)}
+img{display:block;max-width:100%}
 p{margin:0}
-button{font-family:inherit}
-:focus-visible{outline:2px solid #5E8F2A;outline-offset:3px}
-.wrap{max-width:1248px;margin:0 auto;padding-left:var(--gx);padding-right:var(--gr)}
-section{position:relative}
-
-.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--leaf)}
-.dark .eyebrow::before,.on-photo .eyebrow::before{background:var(--acc)}
-.dark .eyebrow,.on-photo .eyebrow{color:var(--on-dark-2)}
-.h1{font-size:clamp(46px,6.6vw,104px);line-height:.98;font-weight:700;letter-spacing:-.035em}
-.h2{font-size:clamp(34px,4vw,56px);line-height:1.05;font-weight:700;letter-spacing:-.03em}
-.h3{font-family:var(--head);font-size:clamp(22px,1.9vw,28px);line-height:1.15;font-weight:700;letter-spacing:-.02em}
-.lede{font-size:clamp(16px,1.25vw,18px);line-height:1.6;color:var(--ink-2);max-width:56ch}
-.dark .lede,.on-photo .lede{color:var(--on-dark-2)}
-
-.sh{display:grid;gap:16px;margin-bottom:clamp(40px,5vw,64px)}
-@media(min-width:900px){.sh.split{grid-template-columns:1fr 1fr;align-items:end;gap:48px}.sh.split .lede{justify-self:end}}
-.sh.center{justify-items:center;text-align:center}
-.sh.center .lede{margin-inline:auto}
-.sh .tt{display:grid;gap:16px;justify-items:start}
-
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;cursor:pointer;border:1.5px solid transparent;transition:background .25s,color .25s,border-color .25s,transform .2s}
-.btn:active{transform:scale(.97)}
-.ar{display:inline-block;transition:transform .3s var(--ease)}
-.btn:hover .ar,.link:hover .ar,.ac:hover .link .ar{transform:translateX(4px)}
-.btn-p{background:var(--forest);color:#fff}
-.btn-p:hover{background:#0F2620}
-.btn-a{background:var(--acc);color:var(--ink)}
-.btn-a:hover{background:#D6F063}
-.dark .btn-a,.on-photo .btn-a{background:var(--acc);color:var(--ink)}
-.dark .btn-a:hover,.on-photo .btn-a:hover{background:#D6F063}
-.btn-s{border-color:var(--forest);color:var(--forest);background:transparent}
-.btn-s:hover{background:var(--forest);color:#fff}
-.dark .btn-p,.on-photo .btn-p{background:var(--stone);color:var(--forest)}
-.dark .btn-p:hover,.on-photo .btn-p:hover{background:var(--stone-2)}
-.dark .btn-s,.on-photo .btn-s{border-color:rgba(255,255,255,.7);color:#fff}
-.dark .btn-s:hover,.on-photo .btn-s:hover{background:#fff;color:var(--ink)}
-.btn-sm{min-height:42px;padding:0 18px;font-size:14px}
-.link{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;text-decoration:none;color:inherit}
-.ctas{display:flex;flex-wrap:wrap;gap:12px}
-
-.tag{display:inline-flex;align-items:center;font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:999px;background:var(--stone);color:var(--ink-2);white-space:nowrap}
-.tags{display:flex;flex-wrap:wrap;gap:6px}
-
-/* HEADER */
-header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:rgba(251,253,243,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav-in{display:flex;align-items:center;gap:32px;min-height:72px;max-width:1248px;margin:0 auto;padding-left:var(--gx);padding-right:var(--gr)}
-.logo{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:var(--ink)}
-.logo b{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:30px;font-weight:600;letter-spacing:-.02em;line-height:1}
-.logo span{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.menu{display:flex;gap:4px;list-style:none;margin:0;padding:0}
-.menu a{display:flex;align-items:center;gap:6px;padding:10px 14px;font-size:15px;font-weight:600;text-decoration:none;border-radius:999px;color:var(--ink-2)}
-.menu a:hover{background:var(--stone);color:var(--ink)}
-.nav-r{margin-left:auto;display:flex;align-items:center;gap:10px}
-.ico{width:44px;height:44px;border-radius:50%;background:var(--stone);display:flex;align-items:center;justify-content:center;border:0;cursor:pointer;color:var(--ink)}
-.ico:hover{background:var(--stone-2)}
-.burger{display:none}
-.mnav{display:none;padding:4px var(--gr) 20px var(--gx)}
-.mnav a{display:block;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:600}
-@media(max-width:980px){.menu,.nav-r .btn,.logo span{display:none}.burger{display:flex}.mnav.open{display:block}}
-
-/* HERO */
-.hero{height:max(560px,calc(100svh - 96px));max-height:860px;overflow:hidden;background:#1B1B1A;margin:8px 12px 0;border-radius:32px}
-.hero .bg{position:absolute;inset:-4%;background:url(img/campus.jpg) center/cover;animation:pan 28s ease-in-out infinite alternate}
-@keyframes pan{0%{transform:scale(1.04) translateX(-1.5%)}100%{transform:scale(1.12) translateX(1.5%)}}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,26,20,.9),rgba(8,26,20,.2) 60%),linear-gradient(90deg,rgba(8,26,20,.35),transparent 60%)}
-.hero .wrap{position:relative;z-index:2;height:100%;display:flex;align-items:flex-end;justify-content:flex-start;padding-bottom:48px}
-.hero-t{max-width:880px;display:flex;flex-direction:column;align-items:flex-start;gap:20px;color:#fff}
-.hero .ctas{margin-top:8px}
-.vtag{position:absolute;left:clamp(24px,4vw,56px);top:28px;z-index:2;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.78);display:flex;align-items:center;gap:10px}
-.vtag i{width:8px;height:8px;border-radius:50%;background:#fff;animation:blink 1.6s infinite}
-@keyframes blink{50%{opacity:.25}}
-@media(max-width:760px){.hero{margin:6px;border-radius:24px}.hero .wrap{padding-bottom:28px}}
-.chip-live{display:inline-flex;align-items:center;gap:8px;background:var(--stone);color:var(--forest);font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px}
-.chip-live i{width:8px;height:8px;border-radius:50%;background:var(--leaf)}
-.meta{display:inline-flex;flex-wrap:wrap;background:rgba(255,255,255,.14);backdrop-filter:blur(10px);border-radius:16px;padding:6px;color:#fff;font-size:14px;font-weight:500}
-.meta span{padding:8px 16px}.meta span+span{border-left:1px solid rgba(255,255,255,.25)}
-.hero-r{display:flex;flex-wrap:wrap;gap:24px 40px;align-items:flex-end;justify-content:space-between;width:100%}
-.q4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;width:100%;margin-top:6px}
-.q4 a{display:flex;flex-direction:column;gap:2px;text-decoration:none;color:#fff;background:rgba(242,246,225,.16);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(246,241,228,.22);border-radius:18px;padding:14px 16px;transition:background .25s,transform .25s}
-.q4 a:hover{background:rgba(246,241,228,.26);transform:translateY(-3px)}
-.q4 small{font-size:11.5px;font-weight:700;letter-spacing:.14em;color:var(--acc)}
-.q4 b{font-family:var(--head);font-weight:700;font-size:clamp(18px,1.6vw,22px);line-height:1.1}
-@media(max-width:760px){.q4{grid-template-columns:1fr 1fr}.q4 a{padding:12px 14px}}
-
-/* STATS */
-.stats{background:var(--night);color:#fff;overflow:hidden;padding-block:26px;margin-top:8px}
-.track{display:flex;width:max-content;animation:mq 34s linear infinite}
-.track span{font-family:var(--body);font-weight:500;font-size:15px;color:var(--on-dark-2);white-space:nowrap;padding-right:56px;display:flex;align-items:baseline;gap:12px}
-.track span b{font-family:var(--head);font-weight:700;font-size:clamp(34px,3.4vw,46px);line-height:1;color:var(--acc)}
-.track span em{font-style:normal;font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.65}
-.track span::after{content:"";width:6px;height:6px;border-radius:50%;background:rgba(200,230,60,.7);align-self:center;margin-left:44px}
-@keyframes mq{to{transform:translateX(-50%)}}
-
-/* TOP 4 */
-.help{background:var(--stone);padding-block:var(--sec)}
-.acc{display:flex;height:clamp(430px,35vw,470px)}
-.ac{position:relative;flex:1 1 0;min-width:0;border-radius:var(--r);overflow:hidden;margin-left:-18px;background:#fff;border:2px solid #fff;box-shadow:0 24px 36px -18px rgba(20,20,20,.45),-12px 0 24px -14px rgba(20,20,20,.35);cursor:pointer;transition:flex-grow .65s var(--ease);padding:0;text-align:left;color:var(--ink)}
-.ac:first-child{margin-left:0}
-.ac.on{flex-grow:3.1;min-width:min(600px,50%)}
-.ac .ph{position:absolute;inset:0;transition:right .65s var(--ease)}
-.ac .ph img{width:100%;height:100%;object-fit:cover}
-.ac .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,10,.9) 0%,rgba(10,10,10,.55) 26%,rgba(10,10,10,.05) 55%,transparent 64%);transition:opacity .4s}
-.ac .lb{position:absolute;left:24px;right:30px;bottom:24px;z-index:2;color:#fff;display:flex;flex-direction:column;gap:8px;transition:opacity .3s}
-.ac .n{font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:.14em}
-.ac .lb .n{opacity:.75}
-.ac .lb b{font-family:var(--head);font-weight:600;font-size:clamp(17px,1.5vw,21px);line-height:1.25}
-.ac .pn{position:absolute;inset:0 0 0 auto;width:min(54%,330px);background:#fff;z-index:3;padding:32px 28px;display:flex;flex-direction:column;align-items:flex-start;gap:14px;opacity:0;transform:translateX(24px);transition:opacity .35s .12s,transform .55s .05s var(--ease);pointer-events:none;overflow:hidden}
-.ac .pn .n{color:var(--muted)}
-.ac .pn p{font-size:15px;color:var(--ink-2);line-height:1.6}
-.ac .pn .link{margin-top:auto}
-.ac.on .pn{opacity:1;transform:none;pointer-events:auto}
-.ac.on .ph{right:min(54%,330px)}
-.ac.on .ph::after,.ac.on .lb{opacity:0}
-.help-foot{margin-top:48px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:center;font-size:16px;color:var(--ink-2)}
-@media(max-width:860px){
-  .acc{flex-direction:column;height:auto;gap:14px}
-  .ac{margin-left:0;flex:none;height:132px;transition:height .55s var(--ease)}
-  .ac.on{min-width:0;height:auto}
-  .ac.on .ph{right:0;bottom:auto;height:220px}
-  .ac .pn{position:relative;width:auto;margin-top:220px;transform:none;padding:24px}
-  .ac:not(.on) .pn{display:none}
-}
-
-/* NOT SEEING */
-.nse{color:#fff;background:#1B1B1A;overflow:hidden}
-.nse .bg{position:absolute;inset:0;background:url(img/pulse.jpg) center 45%/cover}
-.nse::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,40,32,.9),rgba(14,40,32,.55))}
-.nse .wrap{position:relative;z-index:2;padding-block:clamp(56px,7vw,88px);display:grid;gap:24px;align-items:center}
-@media(min-width:900px){.nse .wrap{grid-template-columns:1fr 1fr;gap:48px}}
-.nse .rt{display:grid;gap:24px;justify-items:start}
-
-/* APPROACH */
-.whole{padding-block:var(--sec)}
-.bento{display:flex;flex-direction:column;gap:16px}
-.bcol{display:flex;flex-direction:column;gap:16px;min-width:0;min-height:0}
-.b-sub{display:flex;gap:16px;min-height:0;min-width:0}
-.b-sub .bx{flex:1 1 0}
-@media(min-width:760px){
-  .bento{flex-direction:row;height:clamp(480px,44vw,560px)}
-  .bento>.b1,.bento>.bcol,.bcol>.b2,.bcol>.b-sub,.b-sub>.bx{flex:1 1 0;min-height:0;min-width:0;transition:flex-grow .7s var(--ease)}
-  .bento .bx{min-height:0}
-  .bento[data-a="0"]>.b1{flex-grow:1.45}
-  .bento[data-a="1"]>.bcol,.bento[data-a="2"]>.bcol,.bento[data-a="3"]>.bcol{flex-grow:1.45}
-  .bento[data-a="1"] .bcol>.b2{flex-grow:1.7}
-  .bento[data-a="2"] .bcol>.b-sub,.bento[data-a="3"] .bcol>.b-sub{flex-grow:1.7}
-  .bento[data-a="2"] .b-sub>.b3{flex-grow:1.8}
-  .bento[data-a="3"] .b-sub>.b4{flex-grow:1.8}
-}
-@media(max-width:759px){.b-sub{flex-direction:column}}
-.bx{position:relative;overflow:hidden;min-height:230px;color:#fff;cursor:pointer;background:#222;border:0;padding:0;text-align:left;display:block;width:100%;border-radius:var(--r)}
-.bx img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
-.bx::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,10,.82) 0%,rgba(10,10,10,.2) 45%,transparent 70%);transition:background .45s;z-index:1}
-.bx .bt{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:24px 26px;display:flex;flex-direction:column}
-.bx h3{font-size:clamp(20px,1.8vw,24px);font-weight:600;transition:font-size .45s var(--ease)}
-.bx .bd{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .5s var(--ease),opacity .35s,margin .5s}
-.bx .bd>p{overflow:hidden;font-size:15px;line-height:1.55;color:rgba(255,255,255,.9);max-width:46ch}
-.bx.on img{transform:scale(1.05)}
-.bx.on::before{background:linear-gradient(0deg,rgba(10,10,10,.88) 0%,rgba(10,10,10,.45) 55%,rgba(10,10,10,.1) 100%)}
-.bx.on h3{font-size:clamp(26px,2.4vw,32px)}
-.bx.on .bd{grid-template-rows:1fr;opacity:1;margin-top:10px}
-
-/* STEPS */
-.steps{height:400vh;background:var(--stone)}
-.st-stick{position:sticky;top:72px;height:calc(100vh - 72px);display:flex;flex-direction:column;justify-content:center}
-.steps .sh{margin-bottom:clamp(24px,4.5vh,48px)}
-.st-g{display:grid;grid-template-columns:1fr;gap:48px;align-items:center;max-width:1040px;margin:0 auto;width:100%}
-@media(min-width:880px){.st-g{grid-template-columns:1fr 380px}}
-.rail{display:flex;flex-direction:column}
-.row{display:flex;align-items:center;gap:28px}
-.cell{width:clamp(72px,7vw,92px);display:flex;justify-content:center;flex-shrink:0}
-.dot{--s:60px;width:var(--s);height:var(--s);border-radius:50%;border:1.5px solid var(--forest);display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:500;font-size:calc(var(--s)*.4);background:#fff;color:var(--ink);transition:width .55s var(--ease),height .55s var(--ease),font-size .55s var(--ease),background .35s,color .35s}
-.dot.d0{--s:clamp(72px,7vw,92px);background:var(--forest);border-color:var(--forest);color:#fff;font-weight:700}
-.dot.d1{--s:clamp(54px,5.2vw,68px)}
-.dot.d2{--s:clamp(44px,4.2vw,54px)}
-.dot.d3{--s:clamp(30px,2.6vw,34px)}
-.segw{width:clamp(72px,7vw,92px);display:flex;justify-content:center}
-.seg{width:0;height:clamp(20px,3.6vh,36px);border-left:1.5px dashed var(--forest)}
-.tx{display:grid;grid-template-rows:0fr;opacity:0;transform:translateX(-12px);transition:grid-template-rows .55s var(--ease),opacity .4s,transform .55s var(--ease);max-width:360px}
-.tx>div{overflow:hidden;display:grid;gap:8px}
-.row.on .tx{grid-template-rows:1fr;opacity:1;transform:none}
-.tx .k{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.tx h3{font-size:clamp(28px,2.6vw,36px);font-weight:700;line-height:1.1}
-.tx p{font-size:16px;color:var(--ink-2)}
-.ill{display:none;position:relative;height:340px}
-@media(min-width:880px){.ill{display:block}}
-.ill img{position:absolute;inset:0;margin:auto;max-width:100%;max-height:100%;object-fit:contain;opacity:0;transform:scale(.9) rotate(-4deg);transition:opacity .45s,transform .7s var(--ease)}
-.ill img.on{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.steps{height:auto}.st-stick{position:static;height:auto;padding-block:80px}}
-
-/* STORIES */
-.stories{background:var(--night);color:#fff;height:300vh}
-.sto-stick{position:sticky;top:72px;height:calc(100vh - 72px);overflow:hidden;display:flex;flex-direction:column;justify-content:center}
-.stories .sh{margin-bottom:clamp(8px,2vh,24px)}
-.sto-track{display:flex;align-items:center;gap:clamp(32px,4.4vw,56px);padding-left:max(24px,6vw);width:max-content;will-change:transform;padding-block:48px}
-.sc{width:clamp(280px,28vw,372px);aspect-ratio:384/372;background:var(--stone);color:var(--ink);border-radius:var(--r);padding:clamp(26px,2.8vw,36px);display:flex;flex-direction:column;gap:16px;flex-shrink:0;transition:transform .6s var(--ease)}
-.sc:nth-child(4n+1),.sc:nth-child(4n+2){transform:rotate(-6deg)}
-.sc:nth-child(4n+3),.sc:nth-child(4n+4){transform:rotate(6deg)}
-.sc:hover{transform:rotate(0) scale(1.03)}
-.sc .qm{font-family:Georgia,serif;font-size:64px;line-height:.6;color:var(--muted);height:28px}
-.sc q{font-family:var(--head);font-weight:600;font-size:clamp(20px,1.8vw,24px);line-height:1.3;quotes:none;flex-grow:1}
-.sc .who{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:16px;border-top:1px solid var(--stone-2)}
-.sc .who span:first-child{font-size:15px;font-weight:600}
-.sc .tag{background:#fff}
-@media (prefers-reduced-motion:reduce){.stories{height:auto}.sto-stick{position:static;height:auto;padding-block:80px;overflow-x:auto}}
-
-/* DOCTORS */
-.exp{padding-block:var(--sec)}
-.drow{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 64px)/2.6);gap:32px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
-.drow::-webkit-scrollbar{display:none}
-@media(max-width:900px){.drow{grid-auto-columns:78%;gap:20px}}
-.dc{scroll-snap-align:start;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
-.dc .ph{width:100%;border-radius:var(--r);overflow:hidden;aspect-ratio:3/4;margin-bottom:18px;background:var(--stone)}
-.dc .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+h1,h2,h3,h4{margin:0;font-family:var(--serif);font-weight:400;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(44px,6.4vw,86px);line-height:.99}
+h2{font-size:clamp(33px,4.4vw,56px);line-height:1.03}
+h3{font-size:clamp(22px,2.3vw,30px);line-height:1.12}
+h1 em,h2 em{font-style:italic}
+blockquote,figure{margin:0}
+.skip{position:absolute;left:-9999px;top:0;z-index:70;background:var(--deep);color:var(--onDeep);padding:12px 20px;font:700 13px var(--sans)}
+.skip:focus{left:12px;top:calc(env(safe-area-inset-top,0px) + 12px)}
+.band{border-bottom:1px solid var(--line)}
+.band.putty{background:var(--putty);--surface:var(--putty)}
+.in{max-width:1280px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));
+padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:clamp(52px,6.4vw,92px)}
+.in.flush{padding-block:0}
+.lede{color:var(--ink2);font-size:17px;max-width:62ch}
+.hd{display:grid;grid-template-columns:1.1fr .9fr;gap:20px 56px;align-items:end;margin-bottom:46px}
+.hd.c{grid-template-columns:1fr;max-width:820px;margin-inline:auto;text-align:center}
+.hd.c .lede{margin-inline:auto}
+.hd h2.two{max-width:13ch;text-wrap:normal}
+:focus-visible{outline:2.5px solid var(--orange);outline-offset:3px}
+/* controls — all rectangular */
+.btn{display:inline-flex;align-items:center;gap:11px;border:0;border-radius:0;cursor:pointer;text-decoration:none;
+font:700 12.5px var(--sans);letter-spacing:.13em;text-transform:uppercase;padding:15px 26px;transition:background .2s,color .2s}
+.btn svg{width:14px;height:14px;transition:transform .25s}
+.btn:hover svg{transform:translateX(4px)}
+.btn-o{background:var(--orange);color:#FFF8F2}.btn-o:hover{background:var(--deep)}
+.btn-d{background:var(--deep);color:var(--onDeep)}.btn-d:hover{background:var(--orange);color:#FFF8F2}
+.btn-w{background:var(--card);color:var(--ink)}.btn-w:hover{background:var(--orange);color:#FFF8F2}
+.lnk{display:inline-flex;align-items:center;gap:9px;font:700 11.5px var(--sans);letter-spacing:.14em;text-transform:uppercase;
+color:var(--accentInk);text-decoration:none;background:none;border:0;padding:0;cursor:pointer;font-family:var(--sans)}
+.lnk::after{content:"→";transition:transform .25s}
+.lnk:hover::after{transform:translateX(4px)}
+.arr{width:46px;height:46px;border:1.5px solid var(--line);border-radius:0;background:transparent;color:var(--ink);
+cursor:pointer;display:grid;place-items:center;font-size:16px;transition:background .2s,color .2s,border-color .2s}
+.arr:hover:not(:disabled){background:var(--orange);color:#FFF8F2;border-color:var(--orange)}
+.arr:disabled{opacity:.3;cursor:default}
+.ph-note{display:inline-block;font:600 10.5px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);
+border:1px dashed var(--line);padding:5px 11px}
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;will-change:padding;background:color-mix(in srgb,var(--cream) 94%,transparent);
+backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:26px;transition:padding-block .35s cubic-bezier(.2,.75,.2,1);
+padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:13px}
+.brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink);
+font:800 11.5px var(--sans);letter-spacing:.17em;text-transform:uppercase}
+.brand img{height:30px;width:auto}
+:root[data-theme="dark"] .brand img{filter:invert(1) sepia(.25)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .brand img{filter:invert(1) sepia(.25)}}
+.nav a.l{color:var(--ink);text-decoration:none;font:500 14.5px var(--sans)}
+.nav a.l:hover{color:var(--accentInk)}
+.nav .btn{padding:12px 22px}
+.burger{display:none;width:46px;height:46px;border:1.5px solid var(--line);border-radius:0;background:transparent;
+cursor:pointer;color:var(--ink);align-items:center;justify-content:center;gap:4px;flex-direction:column}
+.burger i{display:block;width:17px;height:1.6px;background:currentColor;transition:transform .3s,opacity .2s}
+.burger[aria-expanded="true"] i:nth-child(1){transform:translateY(5.6px) rotate(45deg)}
+.burger[aria-expanded="true"] i:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] i:nth-child(3){transform:translateY(-5.6px) rotate(-45deg)}
+header[data-compact="true"] .nav{padding-block:7px}
+.menu{display:none;border-top:1px solid var(--line);background:var(--cream)}
+.menu[data-open="true"]{display:block}
+.menu ul{list-style:none;margin:0;padding:6px max(16px,env(safe-area-inset-left,0px)) 16px}
+.menu a{display:block;padding:14px 0;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;font:500 17px var(--sans)}
+.menu .btn{margin:14px max(16px,env(safe-area-inset-left,0px)) 18px;justify-content:center}
+@media(max-width:1000px){.nav a.l,.nav>.btn{display:none}.burger{display:flex}}
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr 1fr;align-items:stretch;min-height:clamp(440px,60vh,600px)}
+.hero .ht{padding:clamp(34px,4.4vw,64px) clamp(28px,4vw,56px) clamp(34px,4.4vw,64px) 0;
+display:flex;flex-direction:column;justify-content:center}
+.hero h1{max-width:24ch;font-size:clamp(38px,4.6vw,62px);text-wrap:normal}
+.hero .lede{margin:24px 0 34px;max-width:44ch}
+.hero .hi{position:relative;align-self:stretch;min-height:320px;background:var(--putty)}
+.hero .hi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero .ht{padding:clamp(30px,6vw,48px) 0}
+ .hero .hi{min-height:340px;margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)))}}
+/* outcomes */
+.outs{display:grid;grid-template-columns:repeat(4,1fr)}
+.out{padding:clamp(22px,2.6vw,34px) clamp(14px,2vw,28px);border-right:1px solid var(--line)}
+.out:last-child{border-right:0}
+.out b{display:block;font:400 clamp(34px,3.6vw,46px) var(--serif);color:var(--ink);line-height:1;font-variant-numeric:tabular-nums}
+.out span{display:block;margin-top:8px;font:600 12.5px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+@media(max-width:760px){.outs{grid-template-columns:1fr 1fr}
+ .out:nth-child(2n){border-right:0}.out:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+/* care — disclosure panels */
+.panels{display:flex;gap:18px;align-items:stretch}
+.pan{flex:1 1 0;min-width:0;display:flex;flex-direction:column;background:var(--card)}
+.pan[data-open="true"]{flex-grow:2.4}
+.pan .ph{position:relative;height:290px;overflow:hidden;background:var(--putty)}
+.pan .ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.75,.2,1)}
+.pan:hover .ph img{transform:scale(1.04)}
+.pan .nm{position:absolute;top:0;left:0;background:var(--surface);color:var(--accentInk);
+font:700 11px var(--sans);letter-spacing:.18em;padding:9px 14px}
+.pan .tx{padding:22px;flex:1;display:grid;gap:16px;align-content:start}
+.pan h3 button{all:unset;cursor:pointer;display:block;font-family:var(--serif);font-size:inherit;line-height:1.12;color:var(--ink)}
+.pan h3 button:focus-visible{outline:2.5px solid var(--orange);outline-offset:4px}
+.pan[data-open="true"] h3 button{color:var(--accentInk)}
+.pan .more{display:grid;gap:18px;justify-items:start;max-width:44ch}
+.pan .more p{color:var(--ink2);font-size:14.5px}
+@media(max-width:880px){.panels{flex-direction:column}.pan .ph{height:230px}}
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4.5vw,64px);align-items:center}
+.split .pic img{width:100%;height:clamp(260px,33vw,410px);object-fit:cover}
+@media(max-width:820px){.split{grid-template-columns:1fr}}
+/* systems — the Figma arrangement; the grid tracks animate so the active card grows
+   in size, and the photograph is never covered because the caption sits beneath it */
+.bento{display:grid;gap:18px;height:clamp(520px,54vw,700px);
+grid-template-areas:"ayur siddha siddha" "ayur allo yoga";
+grid-template-columns:1.7fr 1fr 1fr;grid-template-rows:1fr 1fr;
+transition:grid-template-columns .6s cubic-bezier(.2,.75,.2,1),grid-template-rows .6s cubic-bezier(.2,.75,.2,1)}
+.sy{display:flex;flex-direction:column;background:var(--card);min-width:0;min-height:0;overflow:hidden}
+.sy.a{grid-area:ayur}.sy.b{grid-area:siddha}.sy.c{grid-area:allo}.sy.d{grid-area:yoga}
+.sy .ph{flex:1 1 auto;min-height:0;overflow:hidden;background:var(--putty)}
+.sy .ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.75,.2,1)}
+.sy[data-open="true"] .ph img{transform:scale(1.03)}
+.sy .tx{flex:0 0 auto;padding:18px 22px 22px;display:grid;gap:8px;align-content:start}
+.sy .bd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.2,.75,.2,1)}
+.sy[data-open="true"] .bd{grid-template-rows:1fr}
+.sy .bd>div{overflow:hidden;min-height:0}
+.sy .sum{color:var(--ink);font-size:14.5px;line-height:1.5}
+.sy .bd p{color:var(--ink2);font-size:14px;padding-top:10px}
+@media(max-width:900px){.bento{height:auto;grid-template-columns:1fr 1fr!important;grid-template-rows:auto auto auto!important;
+ grid-template-areas:"ayur ayur" "siddha siddha" "allo yoga"}
+ /* no track to divide here, so the photo needs its own height: with flex:1 and an
+    auto basis it would otherwise grow to the image's intrinsic height */
+ .sy{min-height:0}
+ .sy .ph,.sy.a .ph{flex:0 0 auto;height:clamp(190px,30vw,300px);min-height:0}
+ .sy.a .ph{height:clamp(230px,38vw,360px)}
+ .sy .bd{grid-template-rows:1fr}}
+@media(max-width:600px){.bento{grid-template-columns:1fr!important;
+ grid-template-areas:"ayur" "siddha" "allo" "yoga"}}
+/* journey — advances with the page scroll */
+.jwrap{position:relative}
+.jstick{position:sticky;top:calc(env(safe-area-inset-top,0px) + 74px)}
+.jbody{display:grid;grid-template-columns:84px minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3.4vw,48px);align-items:center;min-height:330px}
+.rail{position:relative;display:grid;justify-items:center;align-content:center;gap:18px;height:100%}
+.rail::before{content:"";position:absolute;top:10px;bottom:10px;width:1px;background:var(--line)}
+.rail .prog{position:absolute;top:10px;width:1px;background:var(--orange);transition:height .25s linear}
+.jn{position:relative;border:1.5px solid var(--line);background:var(--surface);color:var(--ink2);border-radius:50%;
+cursor:pointer;width:46px;height:46px;display:grid;place-items:center;font:400 19px var(--serif);padding:0;
+transition:background .3s,color .3s,border-color .3s,width .35s cubic-bezier(.2,.75,.2,1),height .35s cubic-bezier(.2,.75,.2,1),font-size .35s}
+.jn[aria-current="true"]{width:78px;height:78px;background:var(--orange);border-color:var(--orange);color:#FFF8F2;font-size:32px}
+.jn.done{background:var(--deep);border-color:var(--deep);color:var(--onDeep)}
+.jn:hover:not([aria-current="true"]){border-color:var(--orange);color:var(--accentInk)}
+.jtx p{color:var(--ink2);margin-top:14px;max-width:40ch}
+.jill{display:grid;place-items:center;min-height:300px}
+.jill img{width:min(100%,300px);height:auto}
+:root[data-theme="dark"] .jill img{filter:invert(.92)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .jill img{filter:invert(.92)}}
+.jhint{margin-top:22px;text-align:center;font:600 10.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+@media(max-width:920px){.jbody{grid-template-columns:64px minmax(0,1fr)}.jill{display:none}}
+/* stories — the row slides left-to-right with the page scroll; no scrollbar, no pager */
+.stw{overflow:hidden}
+.strack{display:flex;gap:12px;width:max-content;will-change:transform}
+.strack>*{width:380px;flex:0 0 380px}
+@media(max-width:860px){.stw{overflow-x:auto;scrollbar-width:none;scroll-snap-type:x mandatory}
+ .stw::-webkit-scrollbar{display:none}
+ .strack{transform:none!important}.strack>*{width:78vw;flex-basis:78vw;scroll-snap-align:start}}
+.qc{background:var(--card);padding:30px;display:flex;flex-direction:column;gap:16px;min-height:260px;
+border-top:1px solid var(--line)}
+.qc .qi{font:400 44px/1 var(--serif);color:var(--accentInk);height:22px}
+.qc blockquote{font:400 22px/1.3 var(--serif)}
+.qc cite{margin-top:auto;font-style:normal}
+/* practitioners */
+.rx{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.rx::-webkit-scrollbar{display:none}
+.rx>*{scroll-snap-align:start;flex:0 0 calc((100% - 36px)/3);min-width:0}
+@media(max-width:980px){.rx>*{flex-basis:76%}}
+.cn{display:flex;align-items:center;gap:14px;margin-top:30px;justify-content:flex-end}
+.cn span{font:600 13px var(--sans);font-variant-numeric:tabular-nums;color:var(--ink2);margin-right:auto}
+.dc{display:flex;flex-direction:column;min-width:0}
+.dc .ph{overflow:hidden;aspect-ratio:4/5;background:var(--putty)}
+.dc .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 16%;transition:transform .7s cubic-bezier(.2,.75,.2,1)}
 .dc:hover .ph img{transform:scale(1.04)}
-.dc h3{font-size:22px;font-weight:600}
-.dc .rl{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.dc p{font-size:15px;color:var(--ink-2)}
-.dc .tags{margin-top:12px}
-.dnav{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);margin-top:48px;padding-top:32px}
-.cnt{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:10px;font-variant-numeric:tabular-nums}
-.cnt b{color:var(--ink);font-weight:600}
-.cnt i.trk{display:block;width:clamp(120px,18vw,220px);height:3px;border-radius:3px;background:var(--stone-2);overflow:hidden}
-.cnt u{display:block;height:100%;width:0;background:var(--forest);border-radius:3px;transition:width .25s}
-.arr button:disabled{opacity:.35;cursor:default;background:#fff;color:var(--ink)}
-.arr{display:flex;gap:12px}
-.arr button{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--ink);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink);transition:background .2s,color .2s}
-.arr button:hover{background:var(--ink);color:#fff}
-
-/* ENVIRONMENT */
-.env{height:clamp(440px,52vw,640px);overflow:hidden;color:#fff;background:#1B1B1A}
-.env .bg{position:absolute;inset:-3%;background:url(img/campus.jpg) center 60%/cover;transition:transform 1.4s var(--ease)}
-.env:hover .bg{transform:scale(1.04)}
-.env::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,26,20,.82),rgba(8,26,20,.12) 60%)}
-.env .wrap{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;gap:16px;padding-bottom:clamp(40px,5vw,64px)}
-.env .h2{max-width:16ch}
-.play{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:#fff;border:0;padding:0;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:3;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .3s var(--ease)}
-.play::before{content:"";border-left:18px solid var(--ink);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
-.play::after{content:"";position:absolute;inset:-10px;border-radius:50%;border:1.5px solid rgba(255,255,255,.6);animation:ring 2.4s var(--ease) infinite}
-@keyframes ring{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.35);opacity:0}}
-.play:hover{transform:translate(-50%,-50%) scale(1.07)}
-
-/* PHILOSOPHY */
-.phil{background:var(--paper);overflow:hidden;padding-block:var(--sec)}
-.phil-g{display:grid;gap:40px;align-items:center;max-width:1300px;margin:0 auto}
-@media(min-width:900px){.phil-g{grid-template-columns:1fr 1fr}}
-.phil-t{padding-left:var(--gx);padding-right:var(--gr);display:grid;gap:20px;max-width:600px;justify-items:start}
-@media(min-width:900px){.phil-t{padding:0 0 0 max(64px,var(--gx))}}
-.phil-v{position:relative;width:100%;aspect-ratio:650/840}
-.phil-v .loop{position:absolute;left:11%;right:0;top:0;bottom:0;border-radius:var(--r) 0 0 var(--r);overflow:hidden;background:#222}
-.phil-v .loop div{position:absolute;inset:-8%;background:url(img/campus.jpg) 80% center/cover;animation:gif 11s ease-in-out infinite alternate}
-@keyframes gif{0%{transform:scale(1.02) translate(-2%,0)}100%{transform:scale(1.14) translate(2.5%,-2%)}}
-.phil-v .sg{position:absolute;left:0;top:20%;width:50%;height:58%;border-radius:var(--r);overflow:hidden;z-index:1;box-shadow:0 30px 50px -20px rgba(0,0,0,.45)}
-.phil-v .sg img{width:100%;height:100%;object-fit:cover;object-position:45% center}
-@media(max-width:899px){.phil-v{aspect-ratio:auto;height:clamp(440px,120vw,620px)}.phil-v .loop{left:22%}.phil-v .sg{left:var(--gx);width:52%;height:58%;top:20%}}
-
-/* TELL US */
-.tell{background:var(--night);color:#fff;padding-top:var(--sec);overflow:hidden}
-.tell-g{display:grid;gap:48px;align-items:center}
-@media(min-width:900px){.tell-g{grid-template-columns:1fr 1fr}}
-.tell .tl{display:grid;gap:20px;align-content:start;justify-items:start}
-.assure{display:grid;gap:12px;margin:8px 0 0;list-style:none;padding:0}
-.assure li{display:flex;gap:12px;align-items:flex-start;color:var(--on-dark-2);font-size:16px}
-.assure li::before{content:"";flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.12) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.5l2.5 2.5L14 7.5' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/22px no-repeat;margin-top:1px}
-form.fm{background:#fff;color:var(--ink);border-radius:var(--r);padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:18px}
-form.fm h3{font-size:22px;font-weight:700}
-.fld{display:flex;flex-direction:column;gap:8px}
-.fld[hidden]{display:none}
-.fld label{font-size:14px;font-weight:700}
-.fld label em{font-style:normal;font-weight:500;color:var(--muted)}
-.fld input,.fld select{font-family:inherit;font-size:15px;border:1.5px solid var(--line);border-radius:var(--r-sm);padding:12px 14px;min-height:50px;background:#FBFAF8;color:var(--ink)}
-.fld input:focus,.fld select:focus{outline:none;border-color:var(--ink);background:#fff}
-.two{display:grid;gap:18px}
-@media(min-width:560px){.two{grid-template-columns:1fr 1fr}}
-.chk{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--ink-2)}
-.chk input{width:18px;height:18px;accent-color:var(--ink)}
-.chk a{font-weight:700;color:var(--ink)}
-form.fm .btn{width:100%;margin-top:4px}
-form.fm .btn-p{background:var(--forest);color:#fff}form.fm .btn-p:hover{background:#0A2D22}
-.fld textarea{font-family:inherit;font-size:16px;border:1.5px solid var(--line);border-radius:var(--r-sm);padding:14px;min-height:120px;resize:vertical;background:#FBFAF8;color:var(--ink);line-height:1.5}
-.fld textarea:focus{outline:none;border-color:var(--forest);background:#fff}
-.err{margin:0;font-size:14px;font-weight:600;color:#B3261E}.err[hidden]{display:none}
-.fld .hint{font-size:13px;color:var(--muted);margin-top:-2px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips button{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:500;cursor:pointer;color:var(--ink-2)}
-.chips button:hover,.chips button.on{border-color:var(--forest);color:#fff;background:var(--forest)}
-.ok{display:none;text-align:center;padding:32px 0;gap:8px}
-.ok h3{font-size:24px}
-form.sent>*:not(.ok){display:none}
-form.sent .ok{display:grid}
-.loop{margin-top:var(--sec);padding-bottom:clamp(48px,6vw,72px);overflow:hidden}
-.loop .lt{display:flex;gap:16px;width:max-content;animation:mq 42s linear infinite}
-.loop:hover .lt{animation-play-state:paused}
-.loop img{width:clamp(200px,20vw,270px);aspect-ratio:270/220;object-fit:cover;border-radius:var(--r-sm);flex-shrink:0;transition:transform .4s var(--ease)}
-.loop img:hover{transform:translateY(-6px)}
-@media (prefers-reduced-motion:reduce){.track,.loop .lt,.hero .bg,.phil-v .loop div,.play::after{animation:none}}
-
-/* INSIGHTS */
-.ins{padding-block:var(--sec)}
-.ins-g{display:grid;gap:40px;align-items:start}
-@media(min-width:960px){.ins-g{grid-template-columns:1fr 1fr;gap:48px}}
-.ins .lft{display:grid;gap:16px;justify-items:start}
-.al{display:flex;flex-direction:column;gap:10px;margin-top:16px;width:100%}
-.ai{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--paper);border:1.5px solid var(--line);border-radius:var(--r-sm);padding:16px 18px;text-align:left;cursor:pointer;color:var(--ink);transition:background .25s,color .25s,border-color .25s}
-.ai .t{display:grid;gap:4px}
-.ai .t small{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);transition:color .25s}
-.ai .t b{font-family:var(--head);font-weight:600;font-size:16px;line-height:1.35}
-.ai:hover{border-color:var(--forest)}
-.ai.on{background:var(--forest);border-color:var(--forest);color:#fff}
-.ai.on .t small{color:rgba(255,255,255,.65)}
-.ai svg{flex-shrink:0;transition:transform .3s var(--ease)}
-.ai:hover svg,.ai.on svg{transform:rotate(45deg)}
-.pv{background:var(--stone);border-radius:var(--r);padding:12px}
-.pv .im{border-radius:var(--r-sm);overflow:hidden;aspect-ratio:16/10}
-.pv .im img{width:100%;height:100%;object-fit:cover}
-.pv .tx2{padding:24px 16px 16px;display:grid;gap:12px;justify-items:start}
-.pv h3{font-size:24px;font-weight:600;line-height:1.25}
-.pv p{font-size:16px;color:var(--ink-2)}
-.pv .tag{background:#fff}
-.fade{animation:fd .45s var(--ease)}
-@keyframes fd{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-
-/* FAQ */
-.faq{background:var(--night);color:#fff;padding-block:var(--sec)}
-.fq{max-width:800px;margin:0 auto}
-.fi{border-top:1px solid var(--line-dark)}
-.fi:last-child{border-bottom:1px solid var(--line-dark)}
-.fi button{width:100%;background:none;border:0;color:#fff;display:flex;justify-content:space-between;gap:24px;align-items:center;padding:24px 0;font-family:var(--head);font-size:clamp(17px,1.4vw,19px);font-weight:600;text-align:left;cursor:pointer}
-.fi .pl{flex-shrink:0;width:32px;height:32px;border-radius:50%;border:1.5px solid var(--line-dark);position:relative;transition:background .3s}
-.fi .pl::before,.fi .pl::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:#fff;transform:translate(-50%,-50%)}
-.fi .pl::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .35s var(--ease)}
-.fi.on .pl{background:#fff}
-.fi.on .pl::before,.fi.on .pl::after{background:var(--ink)}
-.fi.on .pl::after{transform:translate(-50%,-50%) rotate(0)}
-.fi .an{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
-.fi.on .an{grid-template-rows:1fr}
-.fi .an p{overflow:hidden;font-size:16px;color:var(--on-dark-2);max-width:62ch}
-.fi.on .an p{padding-bottom:24px}
-.faq-cta{margin-top:48px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:center;color:var(--on-dark-2)}
-
-/* FOOTER */
-footer{background:#0F3A2B;color:var(--on-dark-2);border-top:1px solid var(--line-dark);padding-block:64px 32px;padding-bottom:calc(32px + env(safe-area-inset-bottom,0px));font-size:15px}
-.fg{display:grid;gap:40px}
-@media(min-width:860px){.fg{grid-template-columns:1.4fr 1fr 1fr 1fr}}
-footer .logo{color:#fff}
-footer .logo span{color:var(--on-dark-2)}
-footer h4{margin:0 0 16px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff}
-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-footer a{text-decoration:none}
-footer a:hover{color:#fff}
-footer .ab{margin-top:16px;max-width:34ch}
-.legal{border-top:1px solid var(--line-dark);margin-top:48px;padding-top:24px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;font-size:13px}
-
-.rv{opacity:0;transform:translateY(24px)}
-.rv.in{opacity:1;transform:none;transition:opacity .8s var(--ease),transform .8s var(--ease)}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+.dc .tx{background:var(--card);padding:18px 20px 22px;display:grid;gap:8px;flex:1;align-content:start}
+.dc small{font:700 10.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--accentInk)}
+.dc h3{font-size:25px}
+/* environment — a 3D campus map and the immersive view inside it.
+   Built from the same tokens as the rest of the page: flat masses, cream ground,
+   espresso structures, orange only on the active marker. */
+.envwrap{position:relative}
+.envstick{position:sticky;top:calc(env(safe-area-inset-top,0px) + 64px)}
+.stage{position:relative;background:var(--putty);height:clamp(400px,72vh,720px);overflow:hidden;
+border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.envprog{position:absolute;left:0;bottom:0;height:3px;background:var(--orange);z-index:5;width:0;
+transition:width .15s linear}
+.envstep{position:absolute;left:clamp(14px,2.5vw,24px);top:clamp(14px,2.5vw,24px);z-index:4;
+font:600 10.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:9px 14px;
+background:var(--card);color:var(--ink2)}
+#pano .envstep{background:rgba(20,12,8,.55);color:#F6EEE1;backdrop-filter:blur(6px)}
+.stage canvas{display:block;width:100%!important;height:100%!important}
+.view{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .5s cubic-bezier(.2,.75,.2,1),visibility .5s}
+.view[data-on="true"]{opacity:1;visibility:visible}
+#map{cursor:grab;touch-action:pan-y}
+#map.drag{cursor:grabbing}
+#pano{background:var(--deep);cursor:grab;touch-action:pan-y}
+#pano.drag{cursor:grabbing}
+.flat{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vig{position:absolute;inset:0;pointer-events:none;
+background:radial-gradient(130% 100% at 50% 50%,transparent 58%,rgba(10,6,4,.4))}
+/* the route drawn across the landscape, and the card that emerges from a pin */
+.route{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:visible}
+.route path{fill:none;stroke:var(--orange);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.route path.base{stroke:var(--ink);opacity:.16;stroke-dasharray:none!important;stroke-dashoffset:0!important}
+.route path.lead{stroke:var(--orange);stroke-width:1.5;opacity:.65;stroke-dasharray:4 5!important;stroke-dashoffset:0!important}
+.mcard{position:absolute;z-index:6;width:min(330px,74vw);background:var(--card);color:var(--ink);
+transform-origin:0 100%;opacity:0;transform:translate(0,0) scale(.62);pointer-events:none;
+transition:opacity .45s cubic-bezier(.2,.75,.2,1),transform .55s cubic-bezier(.2,.75,.2,1);
+box-shadow:0 28px 64px rgba(20,10,6,.34)}
+.mcard[data-on="true"]{opacity:1;transform:scale(1);pointer-events:auto}
+.mcard img{width:100%;height:168px;object-fit:cover;display:block}
+.mcard .mb{padding:18px 20px 20px;display:grid;gap:8px;justify-items:start}
+.mcard .mi{font:700 10.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--accentInk)}
+.mcard h3{font-size:24px}
+.mcard p{font-size:14px;color:var(--ink2);line-height:1.5}
+.mclose{position:absolute;right:clamp(14px,2.5vw,24px);top:clamp(14px,2.5vw,24px);z-index:7;
+border:0;border-radius:0;background:var(--card);color:var(--ink);cursor:pointer;padding:12px 18px;
+font:700 11px var(--sans);letter-spacing:.14em;text-transform:uppercase}
+.mclose:hover{background:var(--orange);color:#FFF8F2}
+@media(max-width:620px){.mcard{width:min(260px,70vw)}.mcard img{height:124px}}
+/* markers — map pins and in-view hotspots share one look */
+.spots{position:absolute;inset:0;pointer-events:none;z-index:3}
+.pin{position:absolute;pointer-events:auto;display:flex;align-items:center;gap:9px;cursor:pointer;padding:9px 16px 9px 10px;
+border:0;background:var(--card);color:var(--ink);transform:translate(-50%,-100%);white-space:nowrap;
+font:600 13px var(--sans);transition:background .22s,color .22s,opacity .25s;box-shadow:0 10px 24px rgba(20,10,6,.18)}
+.pin .nn{font:700 10.5px var(--sans);letter-spacing:.1em;color:var(--ink2);font-variant-numeric:tabular-nums}
+.pin:hover,.pin[data-active="true"]{background:var(--orange);color:#FFF8F2}
+.pin:hover .nn,.pin[data-active="true"] .nn{color:#FFF8F2;opacity:.8}
+.pin::after{content:"";position:absolute;left:50%;top:100%;width:1.5px;height:16px;background:var(--ink);
+transform:translateX(-50%);opacity:.45}
+.spot{position:absolute;pointer-events:auto;width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;padding:0;
+background:rgba(255,248,242,.26);backdrop-filter:blur(6px);color:#FFF8F2;
+transform:translate(-50%,-50%);transition:background .25s,transform .25s,opacity .25s;
+box-shadow:0 0 0 1.5px rgba(255,248,242,.5)}
+.spot i{position:absolute;left:50%;top:50%;background:currentColor;transition:opacity .2s}
+.spot i:first-child{width:15px;height:1.7px;transform:translate(-50%,-50%)}
+.spot i:last-child{width:1.7px;height:15px;transform:translate(-50%,-50%)}
+.spot:hover,.spot[aria-expanded="true"]{background:var(--orange);box-shadow:0 0 0 1.5px var(--orange)}
+.spot[aria-expanded="true"] i:last-child{opacity:0}
+.spotcard{position:absolute;pointer-events:auto;width:min(290px,72vw);background:var(--card);color:var(--ink);
+padding:18px 20px;display:grid;gap:7px;transform:translate(-50%,14px);z-index:4;box-shadow:0 20px 44px rgba(20,10,6,.3)}
+.spotcard b{font:700 10.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--accentInk)}
+.spotcard p{font-size:14px;color:var(--ink2);line-height:1.5}
+/* stage furniture, in the page's own button language */
+.hint{position:absolute;right:clamp(14px,2.5vw,24px);top:clamp(14px,2.5vw,24px);z-index:3;
+font:600 10.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;display:flex;align-items:center;gap:9px;
+padding:9px 14px;background:var(--card);color:var(--ink2)}
+#pano .hint{background:rgba(20,12,8,.55);color:#F6EEE1;backdrop-filter:blur(6px)}
+.stagebar{position:absolute;left:clamp(14px,2.5vw,24px);bottom:clamp(14px,2.5vw,24px);z-index:3;display:flex;gap:10px}
+.sbtn{display:inline-flex;align-items:center;gap:9px;border:0;border-radius:0;cursor:pointer;
+font:700 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:13px 20px;
+background:var(--deep);color:var(--onDeep);transition:background .2s,color .2s}
+.sbtn:hover{background:var(--orange);color:#FFF8F2}
+.sbtn.on{background:var(--orange);color:#FFF8F2}
+.plate{position:absolute;right:clamp(14px,2.5vw,24px);bottom:clamp(14px,2.5vw,24px);z-index:3;
+background:var(--card);padding:16px 20px;display:grid;gap:5px;max-width:min(320px,74vw)}
+.plate b{font:700 10.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--accentInk)}
+.plate span{font:400 21px var(--serif);color:var(--ink)}
+/* the space selector uses the page's own rectangular control language */
+.spaces{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line)}
+.spaces button{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:center;text-align:left;cursor:pointer;
+border:0;border-radius:0;border-bottom:1px solid var(--line);border-right:1px solid var(--line);
+background:transparent;color:var(--ink);padding:18px;
+font:500 15.5px var(--sans);transition:background .22s,color .22s}
+.spaces button:last-child{border-right:0}
+.spaces .nn{font:400 15px var(--serif);color:var(--ink2);font-variant-numeric:tabular-nums}
+.spaces button:hover{color:var(--accentInk)}
+.spaces button:hover .nn{color:var(--accentInk)}
+.spaces button[aria-pressed="true"]{background:var(--orange);color:#FFF8F2}
+.spaces button[aria-pressed="true"] .nn{color:#FFF8F2;opacity:.8}
+@media(max-width:820px){.spaces{grid-template-columns:1fr 1fr}
+ .spaces button:nth-child(2n){border-right:0}}
+@media(max-width:620px){.spot{width:38px;height:38px}.pin{font-size:12px;padding:8px 13px 8px 9px}
+ .plate{display:none}}
+/* approach — the five systems the copy names, converging on one plan */
+.conv{position:relative;height:clamp(430px,46vw,560px)}
+.conv svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.conv svg line{stroke:var(--ink);opacity:.22;stroke-width:1}
+.conv svg line.hot{stroke:var(--orange);opacity:1;stroke-width:2}
+.hub{position:absolute;left:50%;top:50%;translate:-50% -50%;width:clamp(150px,17vw,186px);
+background:var(--card);padding:0 0 16px;text-align:center;z-index:2}
+.hub img{width:100%;aspect-ratio:1;object-fit:cover;object-position:48% 22%;display:block}
+.hub b{display:block;margin-top:13px;font:700 9.5px var(--sans);letter-spacing:.16em;
+text-transform:uppercase;color:var(--accentInk)}
+.hub span{display:block;margin-top:3px;font:400 18px var(--serif);color:var(--ink)}
+.cnote{position:absolute;left:50%;bottom:-4px;translate:-50% 0;width:min(320px,88%);text-align:center;
+font-size:14px;line-height:1.5;color:var(--ink2);z-index:2;margin:0}
+.node{position:absolute;translate:-50% -50%;z-index:3;display:grid;gap:2px;justify-items:center;
+background:var(--surface);border:0;border-radius:0;padding:9px 14px;cursor:pointer;
+font:600 13px var(--sans);color:var(--ink);white-space:nowrap;
+transition:background .22s,color .22s,box-shadow .22s;box-shadow:0 0 0 1px var(--line)}
+.node:hover,.node[data-on="true"]{background:var(--orange);color:#FFF8F2;box-shadow:0 0 0 1px var(--orange)}
+.node em{font-style:normal;font:700 9px var(--sans);letter-spacing:.14em;color:var(--ink2)}
+.node:hover em,.node[data-on="true"] em{color:#FFF8F2;opacity:.8}
+@media(max-width:820px){.conv{height:450px}.node{font-size:12px;padding:8px 11px}}
+/* enquiry */
+.enq{display:grid;grid-template-columns:1fr 1.04fr;align-items:stretch}
+.enq .l{background:linear-gradient(175deg,var(--peach) 0%,var(--orange) 80%);color:#2A1510;
+padding:clamp(30px,4vw,54px);display:flex;flex-direction:column;justify-content:center;gap:20px}
+.enq .l h2,.enq .l p{color:#2A1510}
+.enq .l p{max-width:34ch}
+form{background:var(--card);padding:clamp(26px,3.4vw,42px);display:grid;gap:15px;align-content:center}
+label{font:600 12.5px var(--sans);letter-spacing:.04em;display:grid;gap:6px}
+input[type=text],input[type=email],input[type=tel],textarea{width:100%;border:0;border-bottom:1.5px solid var(--line);
+background:transparent;color:var(--ink);padding:11px 2px;font:15.5px var(--sans);border-radius:0}
+input:focus,textarea:focus{outline:0;border-bottom-color:var(--orange)}
+input[aria-invalid="true"]{border-bottom-color:#C2410C}
+textarea{resize:vertical;min-height:62px;line-height:1.5;font-family:var(--sans)}
+.ck{display:flex;gap:10px;align-items:center;font-weight:400;font-size:14px}
+.ok{min-height:20px;font-weight:700;font-size:13.5px;color:var(--accentInk)}
+@media(max-width:860px){.enq{grid-template-columns:1fr}}
+/* reading list */
+.ins{display:grid;grid-template-columns:1fr 1.04fr;gap:clamp(22px,3.6vw,48px);align-items:start}
+.acl{display:grid}
+.acl button{display:grid;grid-template-columns:30px 1fr 22px;gap:14px;align-items:center;text-align:left;width:100%;
+cursor:pointer;border:0;border-radius:0;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);
+padding:19px 4px;font:500 16.5px/1.35 var(--sans);transition:color .2s,padding-left .25s}
+.acl button:first-child{border-top:1px solid var(--line)}
+.acl button:hover{padding-left:12px;color:var(--accentInk)}
+.acl .nn{font:400 17px var(--serif);color:var(--ink2);font-variant-numeric:tabular-nums}
+.acl button[aria-current="true"],.acl button[aria-current="true"] .nn{color:var(--accentInk)}
+.ax{font-size:19px;justify-self:end;transition:transform .25s;line-height:1}
+.acl button[aria-current="true"] .ax{transform:rotate(45deg)}
+.feat{background:var(--card);position:sticky;top:calc(env(safe-area-inset-top,0px) + 88px)}
+.feat img{width:100%;height:268px;object-fit:cover}
+.feat .fb{padding:26px 28px 30px;display:grid;gap:14px;justify-items:start}
+.feat .fb p{color:var(--ink2);font-size:15px}
+@media(max-width:860px){.ins{grid-template-columns:1fr}.feat{position:static}}
+/* faq */
+.fq{max-width:880px;margin:0 auto;display:grid}
+.fq details{border-bottom:1px solid var(--line)}
+.fq details:first-child{border-top:1px solid var(--line)}
+.fq summary{list-style:none;cursor:pointer;padding:21px 4px;display:grid;grid-template-columns:1fr 24px;gap:16px;
+align-items:center;font:500 17px/1.4 var(--sans)}
+.fq summary::-webkit-details-marker{display:none}
+.fq details[open] summary{color:var(--accentInk)}
+.fq details[open] summary .ax{transform:rotate(45deg)}
+.fq .ans{padding:0 4px 24px;color:var(--ink2);font-size:15.5px;max-width:68ch}
+/* footer */
+footer{background:var(--deep);color:var(--onDeep)}
+footer .in{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;padding-block:34px}
+footer span{color:var(--onDeep2);font-size:13.5px}
+/* toast */
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translate(-50%,calc(100% + 70px));
+z-index:55;background:var(--deep);color:var(--onDeep);padding:15px 24px;max-width:min(92vw,440px);
+box-shadow:0 18px 44px rgba(42,21,16,.3);transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility .35s;
+font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
+.toast.on{transform:translate(-50%,0);visibility:visible}
+.toast b{font:400 20px var(--serif)}
+.toast small{color:#F2954A;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:10.5px}
+.pre{opacity:0}
+@media(prefers-reduced-motion:reduce){.pre{opacity:1}}
 </style>
-</head>
-<body>
 
-<header class="nav">
-  <div class="nav-in">
-    <a class="logo" href="#top" aria-label="Isha Health Solutions home"><b>isha</b><span>Health Solutions</span></a>
-    <ul class="menu">
-      <li><a href="#help">Programs</a></li>
-      <li><a href="#whole">Our approach</a></li>
-      <li><a href="#exp">Doctors</a></li>
-      <li><a href="#env">Virtual tour</a></li>
-    </ul>
-    <div class="nav-r">
-      <a class="btn btn-p btn-sm" href="#tell">Book a consultation</a>
-      <button class="ico burger" type="button" aria-label="Open menu" aria-expanded="false" id="burger"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    </div>
-  </div>
-  <nav class="mnav" id="mnav" aria-label="Mobile">
-    <a href="#help">Programs</a><a href="#whole">Our approach</a><a href="#exp">Doctors</a><a href="#env">Virtual tour</a><a href="#tell">Book a consultation</a>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="#top"><img src="i/logo.svg" alt="Isha">Health Solutions</a>
+    <a class="l" href="#care">Therapeutic Care</a>
+    <a class="l" href="#systems">Wellness Related</a>
+    <a class="l" href="#approach">About Us</a>
+    <a class="l" href="#env">Virtual Tour</a>
+    <a class="btn btn-o" href="#enquire">Quick Booking</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Menu"><i></i><i></i><i></i></button>
   </nav>
+  <div class="menu" id="menu" data-open="false">
+    <ul>
+      <li><a href="#care">Therapeutic Care</a></li>
+      <li><a href="#systems">Wellness Related</a></li>
+      <li><a href="#approach">About Us</a></li>
+      <li><a href="#env">Virtual Tour</a></li>
+    </ul>
+    <a class="btn btn-o" href="#enquire">Quick Booking</a>
+  </div>
 </header>
 
-<main id="top">
+<main id="main">
 
-<section class="hero on-photo">
-  <div class="bg" role="img" aria-label="The Isha Health Solutions courtyard at dusk"></div>
-  <div class="wrap">
-    <div class="hero-t" style="width:100%;max-width:none">
-      <span class="eyebrow rv">Isha Health Solutions</span>
-      <h1 class="h1 rv">Different systems. <span class="sg2">One integrated approach to health.</span></h1>
-      <p class="lede rv">Isha Health Solutions brings Ayurveda, Siddha, Allopathy and Yoga together, to help you explore care suited to your health needs.</p>
-      <div class="ctas rv"><a class="btn btn-a" href="#tell">Book a consultation <span class="ar">→</span></a></div>
+<div class="band" id="top"><div class="in flush">
+  <div class="hero">
+    <div class="ht">
+      <h1 data-m="hero">Four areas where our care runs deepest</h1>
+      <p class="lede" data-m="hero">These are the areas our practitioners have the deepest experience in — care shaped around the person in front of us, drawing on several systems of medicine at once.</p>
+      <div data-m="hero"><a class="btn btn-o" href="#care">Explore now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
+    <div class="hi"><img id="heroimg" src="i/e-campus.jpg" alt="The treatment wing at the Isha Yoga Centre, Coimbatore"></div>
   </div>
-</section>
+</div></div>
 
-<div class="stats" aria-label="The four systems of care at IHS">
-  <div class="track">
-    <span><b>Ayurveda</b>Traditional medicine</span><span><b>Siddha</b>Traditional medicine</span><span><b>Allopathy</b>Modern medicine</span><span><b>Yoga</b>Therapeutic practice</span>
-    <span aria-hidden="true"><b>Ayurveda</b>Traditional medicine</span><span aria-hidden="true"><b>Siddha</b>Traditional medicine</span><span aria-hidden="true"><b>Allopathy</b>Modern medicine</span><span aria-hidden="true"><b>Yoga</b>Therapeutic practice</span>
+<div class="band putty"><div class="outs" id="outs" aria-label="Outcomes"></div></div>
+
+<div class="band" id="care"><div class="in">
+  <div class="hd c">
+    <h2>Where our expertise runs deepest</h2>
+    <p class="lede">Four areas where our approach is most established and our practitioners have seen the widest range of cases. Each begins the same way — a conversation about what is driving the concern.</p>
+  </div>
+  <div class="panels" id="panels"></div>
+</div></div>
+
+<div class="band putty"><div class="in">
+  <div class="split">
+    <div>
+      <h2>Not seeing your condition?</h2>
+      <p class="lede" style="margin:22px 0 30px">These four are where our depth lies, not the limit of our care. Tell us what has been changing and we will say honestly whether this is the right place.</p>
+      <a class="btn btn-d" href="#enquire">Explore now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="pic"><img src="img/pulse.jpg" alt="A practitioner reading a patient's pulse"></div>
+  </div>
+</div></div>
+
+<div class="band" id="systems"><div class="in">
+  <div class="hd">
+    <div>
+      <h2 class="two">Healing the whole of you</h2>
+    </div>
+    <p class="lede">We do not begin with a treatment. We begin with an understanding of what is happening across the body, the mind and the day. These four systems are not alternatives to choose between; read together they let us see the person more completely, and only then decide what the plan should be.</p>
+  </div>
+  <div class="bento" id="bento"></div>
+</div></div>
+
+<div class="band putty"><div class="jwrap" id="jwrap"><div class="jstick"><div class="in">
+  <div class="hd c" style="margin-bottom:34px">
+    <h2>A Clearer Path Towards the Right Care</h2>
+    <p class="lede">You are guided through it, not left to work it out alone. Four steps, and you are free to stop after any of them.</p>
+  </div>
+  <div class="jbody">
+    <div class="rail" id="rail" role="tablist" aria-label="Steps" aria-orientation="vertical"></div>
+    <div id="jtx"></div>
+    <div class="jill" id="jill"></div>
+  </div>
+  <p class="jhint">Scroll to move through the steps</p>
+</div></div></div></div>
+
+<div class="band" id="stories"><div class="in">
+  <div class="hd c">
+    <h2>People who came in with what you have</h2>
+    <p class="lede">Short reflections from people who came through these programmes, named by the one they followed, so you can find the account nearest your own.</p>
   </div>
 </div>
+<div class="stw" id="stw"><div class="strack" id="strack"></div></div>
+<div class="in" style="padding-block:clamp(22px,2.6vw,34px) clamp(52px,6.4vw,92px)"></div></div>
 
-<section class="help" id="help">
-  <div class="wrap">
-    <div class="sh center">
-      <span class="eyebrow rv">Our programs</span>
-      <h2 class="h2 rv">Explore care by health concern</h2>
-      <p class="lede rv">Choose the area closest to your concern. Our team will help you find the right place to begin.</p>
+<div class="band putty"><div class="in">
+  <div class="hd">
+    <div>
+      <h2>Guided by Experience. Focused on Your Wellbeing.</h2>
     </div>
-    <div class="acc rv" id="acc">
-      <button type="button" class="ac on" aria-expanded="true"><span class="ph"><img src="img/pain-hd.jpg" alt=""></span><span class="lb"><span class="n">01</span><b>Pain, Mobility &amp; Rehabilitation</b></span>
-        <span class="pn"><span class="n">01</span><span class="h3">Pain, Mobility &amp; Rehabilitation</span><p>Care for joint, muscle and nerve pain, and support for recovery after injury, surgery or stroke.</p><span class="tags"><span class="tag">Joint pain</span><span class="tag">Sports injuries</span><span class="tag">Stroke care</span></span><span class="link">Explore program <span class="ar">→</span></span></span></button>
-      <button type="button" class="ac" aria-expanded="false"><span class="ph"><img src="img/women.jpg" alt=""></span><span class="lb"><span class="n">02</span><b>Women's Wellbeing</b></span>
-        <span class="pn"><span class="n">02</span><span class="h3">Women's Wellbeing</span><p>Care for menstrual health, PCOS, hormonal concerns, pregnancy and menopause.</p><span class="tags"><span class="tag">PCOS</span><span class="tag">Hormones</span><span class="tag">Menopause</span></span><span class="link">Explore program <span class="ar">→</span></span></span></button>
-      <button type="button" class="ac" aria-expanded="false"><span class="ph"><img src="img/cancer.jpg" alt=""></span><span class="lb"><span class="n">03</span><b>Cancer Support &amp; Recovery</b></span>
-        <span class="pn"><span class="n">03</span><span class="h3">Cancer Support &amp; Recovery</span><p>Supportive care that works alongside your oncology treatment.</p><span class="tags"><span class="tag">Chemo support</span><span class="tag">Recovery</span><span class="tag">Palliative care</span></span><span class="link">Explore program <span class="ar">→</span></span></span></button>
-      <button type="button" class="ac" aria-expanded="false"><span class="ph"><img src="img/meditate-hd.jpg" alt=""></span><span class="lb"><span class="n">04</span><b>Mind, Sleep &amp; Stress</b></span>
-        <span class="pn"><span class="n">04</span><span class="h3">Mind, Sleep &amp; Stress</span><p>Care for sleep difficulties, anxiety and stress.</p><span class="tags"><span class="tag">Sleep</span><span class="tag">Anxiety</span><span class="tag">Stress</span></span><span class="link">Explore program <span class="ar">→</span></span></span></button>
-    </div>
+    <p class="lede">Different systems of medicine, one shared responsibility: to understand the person in front of them. They sit in the same case review each week, so your plan stays one plan.</p>
   </div>
-</section>
+  <div class="rx" id="drw" tabindex="0" role="group" aria-label="Practitioners"></div>
+  <div class="cn"><span id="dn">01</span>
+    <button class="arr" id="dp" aria-label="Previous practitioner">←</button>
+    <button class="arr" id="dx" aria-label="Next practitioner">→</button></div>
+</div></div>
 
-<section class="nse dark">
-  <div class="bg" aria-hidden="true"></div>
-  <div class="wrap">
-    <h2 class="h2 rv">Don't see your concern?</h2>
-    <div class="rt rv"><p class="lede">These are our core programs, not our only areas of care. Tell us about your concern and our team will guide you.</p><a class="btn btn-a" href="#tell">Tell us your concern <span class="ar">→</span></a></div>
-  </div>
-</section>
-
-<section class="whole" id="whole">
-  <div class="wrap">
-    <div class="sh split">
-      <div class="tt"><span class="eyebrow rv">Our approach</span><h2 class="h2 rv">Four systems of care, working together</h2></div>
-      <p class="lede rv">Ayurveda, Siddha, Allopathy and Yoga each bring something different. At IHS they come together, so you can explore care suited to your health needs.</p>
+<div class="band" id="env">
+  <div class="in" style="padding-block:clamp(52px,6.4vw,92px) 0">
+    <div class="hd" style="margin-bottom:34px">
+      <h2>A Closer look at our healing environment</h2>
+      <p class="lede">The environment is part of the care, not an addition to it: quiet, unhurried, and built for rest. Turn the map to see how the centre is laid out, then step inside any building and look around.</p>
     </div>
-    <div class="bento" id="bento" data-a="0">
-      <button type="button" class="bx b1 rv on"><img src="img/vaidya-hd.jpg" alt="" style="object-position:35% center"><span class="bt"><h3>Ayurveda</h3><span class="bd"><p>A traditional Indian system of medicine that looks at the whole person, using therapies, herbal medicine, diet and lifestyle guidance.</p></span></span></button>
-      <div class="bcol">
-        <button type="button" class="bx b2 rv"><img src="img/siddha.jpg" alt="" style="object-position:center 30%"><span class="bt"><h3>Siddha</h3><span class="bd"><p>One of India's oldest systems of medicine, using herbal and mineral preparations and lifestyle guidance.</p></span></span></button>
-        <div class="b-sub">
-          <button type="button" class="bx b3 rv"><img src="img/drananya-hd.jpg" alt="" style="object-position:center 25%"><span class="bt"><h3>Allopathy</h3><span class="bd"><p>Modern medicine: clinical diagnosis, investigations and evidence-based treatment.</p></span></span></button>
-          <button type="button" class="bx b4 rv"><img src="img/yoga.jpg" alt=""><span class="bt"><h3>Yoga</h3><span class="bd"><p>Therapeutic yoga practices that support physical and mental wellbeing.</p></span></span></button>
+    <div class="spaces" id="spaces" role="group" aria-label="Choose a space"></div>
+  </div>
+
+  <div class="envwrap" id="envwrap"><div class="envstick">
+  <div class="stage" id="stage">
+    <p class="envstep" id="envstep">01 / 05 &middot; The map</p>
+    <div class="view" id="map" data-on="true" tabindex="0" role="application"
+         aria-label="Three-dimensional map of the centre. Drag, or use the arrow keys, to turn it.">
+      <svg class="route" id="route" aria-hidden="true"><path class="base" id="routebase"></path><path id="routeline"></path><path class="lead" id="routelead"></path></svg>
+      <div class="spots" id="pins"></div>
+      <article class="mcard" id="mcard" data-on="false">
+        <img id="mcimg" alt="">
+        <div class="mb">
+          <span class="mi" id="mcindex"></span>
+          <h3 id="mcname"></h3>
+          <p id="mctext"></p>
+          <button class="lnk" type="button" id="mcin">Look inside</button>
         </div>
+      </article>
+      <p class="hint" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6 4 12l5 6M15 6l5 6-5 6"/></svg>Drag to turn the map</p>
+      <div class="plate"><b>The grounds</b><span id="mapname">Four buildings, one campus</span></div>
+    </div>
+
+    <button class="mclose" id="mclose" type="button" hidden>Close</button>
+    <div class="view" id="pano" data-on="false" tabindex="0" role="application"
+         aria-label="Three-dimensional view inside the selected space. Drag, or use the arrow keys, to look around.">
+      <img class="flat" id="panoflat" src="i/e-campus.jpg" alt="The lit treatment wing at dusk">
+      <div class="vig" aria-hidden="true"></div>
+      <div class="spots" id="spots"></div>
+      <p class="hint" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6 4 12l5 6M15 6l5 6-5 6"/></svg>Drag to look around</p>
+      <div class="plate"><b id="panokicker">Treatment block</b><span>Open a marker to see what you are looking at</span></div>
+    </div>
+
+    <div class="stagebar">
+      <button class="sbtn" id="play" type="button">&#9654; Film</button>
+    </div>
+    <span class="envprog" id="envprog"></span>
+  </div></div></div>
+</div>
+
+<div class="band putty" id="approach"><div class="in">
+  <div class="split">
+    <div>
+      <h2>The thinking behind our integrated approach</h2>
+      <p class="lede" style="margin-top:22px">At IHS, healing is not just about managing symptoms — it's about creating lasting wellbeing. Guided by Sadhguru's vision, Isha Health Solutions brings together modern medicine, Ayurveda, Siddha, Yoga, and conscious living to help you restore balance, recover naturally, and lead a healthier life.</p>
+    </div>
+    <div class="conv" id="conv">
+      <svg id="convlines" aria-hidden="true"></svg>
+      <div class="hub">
+        <img src="i/sg-sadh.jpg" alt="Sadhguru">
+        <b>Guided by</b><span>Sadhguru's vision</span>
       </div>
+      <p class="cnote" id="cnote">Five readings of the same person, and one plan drawn from all of them.</p>
     </div>
   </div>
-</section>
+</div></div>
 
-<section class="steps" id="steps">
-  <div class="st-stick wrap">
-    <div class="sh center">
-      <span class="eyebrow">How it works</span>
-      <h2 class="h2">Your care journey, step by step</h2>
-      <p class="lede">What to expect when you reach out to Isha Health Solutions.</p>
+<div class="band" id="enquire"><div class="in flush">
+  <div class="enq">
+    <div class="l">
+      <h2>Let's understand your health needs</h2>
+      <p style="margin-top:18px">You do not need to know which programme is right for you. Tell us what has been changing, and a doctor will come back to you with where to start — the first consultation costs nothing.</p>
     </div>
-    <div class="st-g">
-      <div class="rail" id="rail">
-        <div class="row on"><div class="cell"><div class="dot d0">1</div></div><div class="tx"><div><span class="k">Step 1</span><h3>Reach out</h3><p>Tell us about your health concern and what you are looking for.</p></div></div></div>
-        <div class="segw"><div class="seg"></div></div>
-        <div class="row"><div class="cell"><div class="dot d1">2</div></div><div class="tx"><div><span class="k">Step 2</span><h3>Consult</h3><p>Meet our doctors to discuss your history and health needs.</p></div></div></div>
-        <div class="segw"><div class="seg"></div></div>
-        <div class="row"><div class="cell"><div class="dot d2">3</div></div><div class="tx"><div><span class="k">Step 3</span><h3>Plan</h3><p>Receive a care plan that draws on the systems of care suited to you.</p></div></div></div>
-        <div class="segw"><div class="seg"></div></div>
-        <div class="row"><div class="cell"><div class="dot d3">4</div></div><div class="tx"><div><span class="k">Step 4</span><h3>Follow up</h3><p>Stay in touch with your care team as you continue your care.</p></div></div></div>
-      </div>
-      <div class="ill" aria-hidden="true">
-        <img class="on" src="img/step1.png" alt=""><img src="img/step2.png" alt=""><img src="img/step3.png" alt=""><img src="img/step4.png" alt="">
-      </div>
-    </div>
+    <form id="f" novalidate>
+      <label for="f-name">Name<input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your beautiful name…" required></label>
+      <label for="f-email">Email<input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="hello@example.com"></label>
+      <label for="f-wa">Whatsapp<input id="f-wa" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="Whatsapp number with country code…" required></label>
+      <label for="f-q">Your question<textarea id="f-q" name="question" rows="2" placeholder="What would you like to ask a doctor?"></textarea></label>
+      <label class="ck" for="f-terms"><input id="f-terms" type="checkbox" required> I accept the Terms</label>
+      <button class="btn btn-o" type="submit" style="justify-content:center">Submit</button>
+      <p class="ok" id="ok" role="status" aria-live="polite"></p>
+    </form>
   </div>
-</section>
+</div></div>
 
-<section class="stories dark" id="stories">
-  <div class="sto-stick">
-    <div class="wrap"><div class="sh center">
-      <span class="eyebrow">Patient stories</span>
-      <h2 class="h2">In their own words</h2>
-      
-    </div></div>
-    <div class="sto-track" id="stoTrack">
-      <article class="sc"><span class="qm" aria-hidden="true">“</span><q>I felt heard. The doctor went through my whole history before suggesting anything.</q><div class="who"><span>Meenakshi R., Coimbatore</span></div></article>
-      <article class="sc"><span class="qm" aria-hidden="true">“</span><q>Everything was explained clearly, and I knew what each part of my care was for.</q><div class="who"><span>Kavya S., Bengaluru</span></div></article>
-      <article class="sc"><span class="qm" aria-hidden="true">“</span><q>The team was clear about how their care fits alongside my cancer treatment.</q><div class="who"><span>Rajesh P., Hyderabad</span></div></article>
-      <article class="sc"><span class="qm" aria-hidden="true">“</span><q>I was never rushed. Every question I had was answered.</q><div class="who"><span>Arjun M., Chennai</span></div></article>
-      <article class="sc"><span class="qm" aria-hidden="true">“</span><q>My care team stayed in touch, so I never felt left to manage on my own.</q><div class="who"><span>Lakshmi N., Pune</span></div></article>
-      </div>
+<div class="band putty"><div class="in">
+  <div class="hd">
+    <div>
+      <h2>Understand Your Health Better</h2>
+    </div>
+    <p class="lede">The things our doctors find themselves explaining in almost every consultation, written down so you can arrive already knowing them.</p>
   </div>
-</section>
+  <div class="ins">
+    <div class="acl" id="acl" role="tablist" aria-label="Articles"></div>
+    <article class="feat" id="feat"></article>
+  </div>
+</div></div>
 
-<section class="exp" id="exp">
-  <div class="wrap">
-    <div class="sh split">
-      <div class="tt"><span class="eyebrow rv">Our doctors</span><h2 class="h2 rv">Meet the doctors behind your care</h2></div>
-      <p class="lede rv">Doctors from different systems of medicine, working together at IHS.</p>
-    </div>
-    <div class="drow" id="drow">
-<div class="dc rv"><div class="ph"><img src="img/drananya-hd.jpg" alt="Dr. Ananya Rao"></div><span class="rl">Allopathy</span><h3>Dr. Ananya Rao</h3><p>MBBS, MD (Obstetrics &amp; Gynaecology)</p></div>
-<div class="dc rv"><div class="ph"><img src="img/vaidya-hd.jpg" alt="Vaidya Lalitha Menon"></div><span class="rl">Ayurveda</span><h3>Vaidya Lalitha Menon</h3><p>BAMS, MD (Ayurveda)</p></div>
-<div class="dc rv"><div class="ph"><img src="img/drsiddharth6.jpg" alt="Dr. Siddharth Nair"></div><span class="rl">Allopathy</span><h3>Dr. Siddharth Nair</h3><p>MBBS, MD (Medicine)</p></div>
-    </div>
-    <div class="dnav"><span class="cnt"><b id="cnt">01</b><i class="trk"><u id="bar"></u></i>03</span><div class="arr"><button type="button" id="prev" aria-label="Previous doctor"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button type="button" id="next" aria-label="Next doctor"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div></div>
+<div class="band"><div class="in">
+  <div class="hd c" style="margin-bottom:34px">
+    <h2>Frequently Asked Questions</h2>
   </div>
-</section>
+  <div class="fq" id="faqlist"></div>
+</div></div>
 
-<section class="env on-photo" id="env">
-  <div class="bg" aria-hidden="true"></div>
-  <button class="play" type="button" aria-label="Play the virtual tour"></button>
-  <div class="wrap">
-    <span class="eyebrow rv">Virtual tour</span>
-    <h2 class="h2 rv">See the centre before you visit</h2>
-  </div>
-</section>
-
-<section class="phil" id="phil">
-  <div class="phil-g">
-    <div class="phil-t">
-      <span class="eyebrow rv">Our philosophy</span>
-      <h2 class="h2 rv">Health is more than the absence of disease</h2>
-      <p class="lede rv">Guided by Sadhguru's vision, Isha Health Solutions brings together modern medicine, Ayurveda, Siddha and Yoga, with the aim of supporting health, not only treating illness.</p>
-    </div>
-    <div class="phil-v">
-      <div class="loop" aria-hidden="true"><div></div></div>
-      <div class="sg rv"><img src="img/sadhguru.jpg" alt="Sadhguru"></div>
-    </div>
-  </div>
-</section>
-
-<section class="tell dark" id="tell">
-  <div class="wrap">
-    <div class="tell-g">
-      <div class="tl">
-        <span class="eyebrow rv">Consultation</span>
-        <h2 class="h2 rv">Tell us what you need</h2>
-        <p class="lede rv">Share your concern in your own words. Our team will get in touch to guide you on the next step.</p>
-      </div>
-      <form class="fm rv" id="fm" novalidate>
-        <h3>Request a call back</h3>
-        <div class="fld"><label for="f-m">Tell us what's going on</label>
-          <textarea id="f-m" placeholder="Describe your concern, ask a question, or tell us if you don't see it in our programs."></textarea></div>
-        <div class="fld"><label for="f-n">Full name</label><input id="f-n" type="text" placeholder="Your name" required autocomplete="name"></div>
-        <div class="two">
-          <div class="fld"><label for="f-w">WhatsApp number</label><input id="f-w" type="tel" placeholder="+91 98765 43210" required autocomplete="tel"></div>
-          <div class="fld"><label for="f-e">Email (optional)</label><input id="f-e" type="email" placeholder="you@example.com" autocomplete="email"></div>
-        </div>
-        <div class="fld"><label for="f-c">Closest program</label>
-          <select id="f-c"><option>Pain, Mobility &amp; Rehabilitation</option><option>Women's Wellbeing</option><option>Cancer Support &amp; Recovery</option><option>Mind, Sleep &amp; Stress</option><option>Something else</option><option>I'm not sure yet</option></select></div>
-        <label class="chk" for="f-t"><input id="f-t" type="checkbox" checked> I agree to the <a href="#tell">terms and privacy policy</a></label>
-        <p class="err" id="ferr" role="alert" hidden>Please add your name and WhatsApp number so our team can reach you.</p>
-        <button class="btn btn-p" type="submit">Request a call back <span class="ar">→</span></button>
-        <div class="ok" role="status"><h3>Thank you</h3><p style="color:var(--muted)">Our team will be in touch with you soon.</p></div>
-      </form>
-    </div>
-  </div>
-  <div class="loop" aria-hidden="true">
-    <div class="lt">
-      <img src="img/pulse.jpg" alt=""><img src="img/meditate-hd.jpg" alt=""><img src="img/siddha.jpg" alt=""><img src="img/mudtherapy.jpg" alt=""><img src="img/yoga.jpg" alt=""><img src="img/vaidya-hd.jpg" alt=""><img src="img/women.jpg" alt="">
-      <img src="img/pulse.jpg" alt=""><img src="img/meditate-hd.jpg" alt=""><img src="img/siddha.jpg" alt=""><img src="img/mudtherapy.jpg" alt=""><img src="img/yoga.jpg" alt=""><img src="img/vaidya-hd.jpg" alt=""><img src="img/women.jpg" alt="">
-    </div>
-  </div>
-</section>
-
-<section class="ins">
-  <div class="wrap ins-g">
-    <div class="lft">
-      <span class="eyebrow rv">Health insights</span>
-      <h2 class="h2 rv">Learn before you decide</h2>
-      <p class="lede rv">Articles on the health concerns we support.</p>
-      <div class="al" id="al"></div>
-    </div>
-    <div class="pv rv" id="pv"></div>
-  </div>
-</section>
-
-<section class="faq dark">
-  <div class="wrap">
-    <div class="sh center">
-      <span class="eyebrow rv">FAQs</span>
-      <h2 class="h2 rv">Common questions</h2>
-      <p class="lede rv">Answers to what people ask before getting in touch.</p>
-    </div>
-    <div class="fq" id="fq">
-      <div class="fi on"><button type="button" aria-expanded="true">Do I need to know which program I need?<span class="pl" aria-hidden="true"></span></button><div class="an"><p>No. Tell us about your concern and our team will help you find the right place to begin.</p></div></div>
-      <div class="fi"><button type="button" aria-expanded="false">My concern isn't listed. Can I still reach out?<span class="pl" aria-hidden="true"></span></button><div class="an"><p>Yes. The four programs are our core areas, not our only ones. Describe your concern in the form and our team will guide you.</p></div></div>
-      <div class="fi"><button type="button" aria-expanded="false">Can I continue my current medication?<span class="pl" aria-hidden="true"></span></button><div class="an"><p>Please do not stop or change any medicine on your own. Your doctor will review your history and advise you.</p></div></div>
-      <div class="fi"><button type="button" aria-expanded="false">How do I know which system of medicine is right for me?<span class="pl" aria-hidden="true"></span></button><div class="an"><p>Your doctor will discuss your health needs and explain which systems of care may suit them.</p></div></div>
-      <div class="fi"><button type="button" aria-expanded="false">Does IHS replace my current treatment?<span class="pl" aria-hidden="true"></span></button><div class="an"><p>No. IHS care is meant to work alongside your existing medical care. Please keep your current doctors informed.</p></div></div>
-      <div class="fi"><button type="button" aria-expanded="false">Do I need prior experience of Yoga?<span class="pl" aria-hidden="true"></span></button><div class="an"><p>No prior experience is needed. Your Yoga teacher will guide you through each practice.</p></div></div>
-    </div>
-  </div>
-</section>
-
+<footer><div class="in">
+  <span>Isha Health Solutions · Isha Yoga Centre, Coimbatore 641114</span>
+  <span>Option 1a · Visual direction from Moodboard 2</span>
+</div></footer>
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="fg">
-      <div><a class="logo" href="#top"><b>isha</b><span>Health Solutions</span></a><p class="ab">Different Systems. One Integrated Approach to Health.</p></div>
-      <div><h4>Programs</h4><ul><li><a href="#help">Pain, Mobility &amp; Rehabilitation</a></li><li><a href="#help">Women's Wellbeing</a></li><li><a href="#help">Cancer Support &amp; Recovery</a></li><li><a href="#help">Mind, Sleep &amp; Stress</a></li></ul></div>
-      <div><h4>Explore</h4><ul><li><a href="#whole">Our approach</a></li><li><a href="#exp">Our doctors</a></li><li><a href="#env">Virtual tour</a></li><li><a href="#phil">Our philosophy</a></li></ul></div>
-      <div><h4>Contact</h4><ul><li>Isha Yoga Center, Velliangiri Foothills, Coimbatore</li><li><a href="#tell">Request a call back</a></li></ul></div>
-    </div>
-    <div class="legal"><span>© 2026 Isha Health Solutions</span><span><a href="#top">Privacy policy</a> · <a href="#top">Terms</a></span></div>
-  </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/motion@10.18.0/dist/motion.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@10.18.0/dist/motion.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 (function(){
-  var M=window.Motion||null, reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, hover=function(){return matchMedia('(hover:hover)').matches;};
+var $=function(i){return document.getElementById(i)};
+var RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var M=window.Motion||null;
+var animate=M&&!RM?M.animate:null;
+var inView=M?M.inView:null;
+var stagger=M?M.stagger:function(){return 0};
+var SPRING=M&&M.spring?M.spring:null;
+var scrollM=M&&M.scroll?M.scroll:null;
+var EASE=[.22,.78,.2,1];
+var PH='<span class="ph-note">Copy to come</span>';
 
-  document.querySelectorAll('.h2,.h1').forEach(function(h){if(h.children.length)return;var w=h.textContent.trim().split(/\s+/);if(w.length<3)return;var k=Math.ceil(w.length/2);h.innerHTML=w.slice(0,k).join(' ')+' <span class="sg2">'+w.slice(k).join(' ')+'</span>';});
-  var bg=document.getElementById('burger'),mn=document.getElementById('mnav');
-  bg.addEventListener('click',function(){var o=mn.classList.toggle('open');bg.setAttribute('aria-expanded',o?'true':'false');});
-  mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.classList.remove('open');});});
+/* ---- toast -------------------------------------------------------- */
+var toast=document.createElement('div');toast.className='toast';toast.setAttribute('role','status');
+document.body.appendChild(toast);var tt;
+function say(t,s){toast.innerHTML='<b></b><small></small>';
+ toast.firstChild.textContent=t;toast.lastChild.textContent=s||'';
+ toast.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('on')},3600)}
 
-  var rv=[].slice.call(document.querySelectorAll('.rv'));
-  if(reduce){rv.forEach(function(e){e.classList.add('in');});}
-  else if(M&&M.inView){rv.forEach(function(e){M.inView(e,function(){e.classList.add('in');},{amount:0.12});});}
-  else if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.12});rv.forEach(function(e){io.observe(e);});}
-  else rv.forEach(function(e){e.classList.add('in');});
-  setTimeout(function(){rv.forEach(function(e){if(e.getBoundingClientRect().top<innerHeight)e.classList.add('in');});},60);
+/* ---- mobile menu --------------------------------------------------- */
+(function(){var b=$('burger'),m=$('menu');
+ function set(open){b.setAttribute('aria-expanded',open);m.dataset.open=open;
+  if(open&&animate)animate(m.querySelectorAll('a'),{opacity:[0,1],transform:['translateY(-6px)','none']},
+   {duration:.3,delay:stagger(.04),easing:EASE})}
+ b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true')});
+ m.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});
+ addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+ addEventListener('resize',function(){if(innerWidth>1000)set(false)})})();
 
-  var acs=[].slice.call(document.querySelectorAll('.ac'));
-  function act(a){acs.forEach(function(x){var on=x===a;x.classList.toggle('on',on);x.setAttribute('aria-expanded',on?'true':'false');});}
-  acs.forEach(function(a){a.addEventListener('mouseenter',function(){if(hover())act(a);});a.addEventListener('click',function(){act(a);});a.addEventListener('focus',function(){act(a);});});
+/* ---- outcomes ------------------------------------------------------- */
+var OUT=[[30,'%','Improved Mobility'],[10000,'+','Lives Supported'],[100,'%','Patient Satisfaction'],[30,'%','Reduced Stress Levels']];
+$('outs').innerHTML=OUT.map(function(o){
+ return '<div class="out"><b data-to="'+o[0]+'" data-sfx="'+o[1]+'">'+o[0].toLocaleString('en-IN')+o[1]+'</b><span>'+o[2]+'</span></div>'}).join('');
+if(inView&&!RM){inView($('outs'),function(){
+ [].forEach.call($('outs').querySelectorAll('b'),function(el){
+  var to=+el.dataset.to,sfx=el.dataset.sfx,t0=performance.now(),dur=900;
+  (function tick(now){var p=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-p,3);
+   el.textContent=Math.round(to*e).toLocaleString('en-IN')+sfx;
+   if(p<1)requestAnimationFrame(tick)})(t0)})},{amount:.6,margin:'-10% 0px'})}
 
-  var bxs=[].slice.call(document.querySelectorAll('.bx')),bento=document.getElementById('bento');
-  function openBx(b){bxs.forEach(function(x){x.classList.toggle('on',x===b);});bento.setAttribute('data-a',bxs.indexOf(b));}
-  bxs.forEach(function(b){b.addEventListener('mouseenter',function(){if(hover())openBx(b);});b.addEventListener('focus',function(){openBx(b);});b.addEventListener('click',function(){openBx(b);});});
-  bento.addEventListener('mouseleave',function(){if(hover())openBx(bxs[0]);});
+/* ---- the four programs ----------------------------------------------- */
+var CARE=[
+ {n:'Pain, Mobility &amp; Rehabilitation',img:'i/c-pain.jpg',mk:'01',alt:'A therapist working on a patient’s knee',
+  d:'Pain that has outlasted the injury is rarely only a joint. We work on the inflammation and the imbalance feeding it, with daily therapies, supervised movement and a diet built for your condition.'},
+ {n:'Women’s Wellbeing',img:'i/c-women.jpg',mk:'02',alt:'A woman standing outdoors with her arms open',
+  d:'Cycles, fertility, thyroid, the years around menopause: read as one continuous story rather than separate complaints. We look for the pattern underneath before treating anything, because the same diagnosis rarely has the same cause twice.'},
+ {n:'Cancer Support &amp; Recovery',img:'i/c-cancer.jpg',mk:'03',alt:'A person resting during treatment',
+  d:'Alongside your oncology team, never in place of them. The work here is appetite, sleep and strength held steady through treatment, then carefully rebuilt afterwards, at the pace your body sets rather than a schedule.'},
+ {n:'Mind, Sleep &amp; Stress',img:'i/c-mind.jpg',mk:'04',alt:'A woman sitting quietly with her eyes closed',
+  d:'Sleep that will not come. A mind that will not settle. Tiredness that rest no longer reaches. We work through breath, digestion, routine and the nervous system itself, rather than quieting the signal and leaving the cause.'}];
+$('panels').innerHTML=CARE.map(function(c,i){var id='care-p'+i;return ''+
+ '<article class="pan" data-open="'+(i===0)+'">'+
+ '<div class="ph"><img src="'+c.img+'" alt="'+c.alt+'"><span class="nm">'+c.mk+'</span></div>'+
+ '<div class="tx"><h3><button aria-expanded="'+(i===0)+'" aria-controls="'+id+'" data-i="'+i+'">'+c.n+'</button></h3>'+
+ '<div class="more" id="'+id+'"'+(i===0?'':' hidden')+'><p>'+c.d+'</p>'+
+ '<button class="lnk" type="button" data-go="'+i+'">See how we treat this</button></div></div></article>'}).join('');
+var pans=[].slice.call(document.querySelectorAll('.pan'));
+function openPan(i){pans.forEach(function(p,j){
+  var on=j===i,body=p.querySelector('.more'),btn=p.querySelector('h3 button');
+  p.dataset.open=on;btn.setAttribute('aria-expanded',on);body.hidden=!on;
+  if(animate)animate(p,{flexGrow:on?2.4:1},
+   SPRING?{easing:SPRING({stiffness:170,damping:24})}:{duration:.5,easing:EASE});
+  else p.style.flexGrow=on?2.4:1;
+  if(on&&animate)animate(body.children,{opacity:[0,1],transform:['translateY(8px)','none']},
+   {duration:.4,delay:stagger(.06),easing:EASE})})}
+$('panels').addEventListener('click',function(e){
+ var go=e.target.closest('[data-go]');
+ if(go){say(CARE[+go.dataset.go].n.replace(/&amp;/g,'&'),'Program page not built yet');return}
+ var b=e.target.closest('h3 button');if(b)openPan(+b.dataset.i)});
+$('panels').addEventListener('mouseover',function(e){
+ if(innerWidth<=880||!matchMedia('(hover:hover)').matches)return;
+ var p=e.target.closest('.pan');if(p)openPan(pans.indexOf(p))});
 
-  function prog(el){var r=el.getBoundingClientRect();var t=el.offsetHeight-innerHeight;return Math.min(1,Math.max(0,-r.top/(t||1)));}
+/* ---- the four pillars ------------------------------------------------- */
+var SYS=[
+ ['a','Ayurveda','i/s-ayur.jpg','Ayurvedic preparations and herbs on a worktable',
+  'Therapies, formulations and diet, chosen for your constitution.',
+  'Panchakarma, internal formulations and the daily routine built around them. This is usually where the longest-standing conditions are worked on, because it addresses what is sustaining them rather than how they present.'],
+ ['b','Siddha','i/s-siddha.jpg','A Siddha inhalation therapy in progress',
+  'A second reading of the same body, through the pulse.',
+  'One of the oldest traditions of this land, with its own diagnosis and its own preparations. We turn to it when a condition has not moved under anything else we have tried.'],
+ ['c','Allopathy','i/s-allo.jpg','A physician in the consulting wing',
+  'What is measured, before anything is decided.',
+  'Bloodwork, imaging and a medical read open every programme and mark every review point, so decisions rest on evidence and anything you already take stays safely managed.'],
+ ['d','Yoga','i/s-yoga.jpg','A supervised yoga practice on the grounds',
+  'Support that continues beyond the treatment room.',
+  'Practices matched to your condition and taught until they need no supervision. This is the part that leaves with you, and the reason a result holds once the programme ends.']];
+$('bento').innerHTML=SYS.map(function(s,i){return '<article class="sy '+s[0]+'" data-i="'+i+'" data-open="'+(i===0)+'" tabindex="0">'+
+ '<div class="ph"><img src="'+s[2]+'" alt="'+s[3]+'"></div>'+
+ '<div class="tx"><h3>'+s[1]+'</h3><p class="sum">'+s[4]+'</p>'+
+ '<div class="bd"><div><p>'+s[5]+'</p></div></div></div></article>'}).join('');
+(function(){
+ var grid=$('bento'),cards=[].slice.call(grid.children);
+ /* each pillar keeps its Figma cell; the tracks around it grow, so the card gains
+    real size and the photograph grows with it rather than being covered */
+ var TRACKS=[['1.7fr 1fr 1fr','1fr 1fr'],
+             ['1fr 1.25fr 1.25fr','1.45fr 1fr'],
+             ['1fr 1.5fr 1fr','1fr 1.4fr'],
+             ['1fr 1fr 1.5fr','1fr 1.4fr']];
+ function open(i){
+  cards.forEach(function(c,j){c.dataset.open=j===i});
+  if(innerWidth>900){grid.style.gridTemplateColumns=TRACKS[i][0];grid.style.gridTemplateRows=TRACKS[i][1]}
+  else{grid.style.gridTemplateColumns='';grid.style.gridTemplateRows=''}}
+ cards.forEach(function(c,i){
+  c.addEventListener('mouseenter',function(){if(matchMedia('(hover:hover)').matches&&innerWidth>900)open(i)});
+  c.addEventListener('focus',function(){open(i)});
+  c.addEventListener('click',function(){open(i)})});
+ addEventListener('resize',function(){
+  var cur=cards.findIndex(function(c){return c.dataset.open==='true'});open(cur<0?0:cur)});
+ open(0)})();
 
-  var steps=document.getElementById('steps'),rows=[].slice.call(document.querySelectorAll('#rail .row')),ills=[].slice.call(document.querySelectorAll('.ill img')),cur=-1;
-  function setStep(i){if(i===cur)return;cur=i;
-    rows.forEach(function(r,k){r.classList.toggle('on',k===i);r.querySelector('.dot').className='dot d'+Math.min(3,Math.abs(k-i));});
-    ills.forEach(function(d,k){d.classList.toggle('on',k===i);});}
+/* ---- how you will experience it: illustrations from the Figma ---------- */
+var JR=[
+ {t:'Discover',s:'Step one',ill:'i/jill.svg',
+  d:'Tell us what has been changing. You do not need a diagnosis, or to know which programme fits \u2014 only the shape of what you have been living with.'},
+ {t:'Consult',s:'Step two',ill:'i/st2.png',
+  d:'A doctor reads your case and sits with you, in person or online. You are listened to before you are advised, and you leave knowing what your condition calls for, what it would ask of you, and whether this is the right place.'},
+ {t:'Treat',s:'Step three',ill:'i/st3.png',
+  d:'One plan, built around you rather than around the diagnosis. Therapies and practice settle into a daily rhythm, medication stays under review, and the plan is expected to change as you do.'},
+ {t:'Sustain',s:'Step four',ill:'i/st4.png',
+  d:'You leave with the practices, the diet and the follow-up that hold it in place. Support continues after the programme ends, because recovery lasts as long as the daily life around it does.'}];
+$('rail').innerHTML='<span class="prog" id="jprog" style="height:0"></span>'+
+ JR.map(function(j,i){return '<button class="jn" role="tab" data-i="'+i+'" aria-selected="'+(i===0)+'" '+
+ 'aria-current="'+(i===0)+'" tabindex="'+(i===0?0:-1)+'" aria-label="Step '+(i+1)+', '+j.t+'">'+(i+1)+'</button>'}).join('');
+var jns=[].slice.call(document.querySelectorAll('.jn')),jcur=-1;
+function jset(i,focus){
+ if(i===jcur)return;jcur=i;
+ jns.forEach(function(b,j){var on=j===i;
+  b.setAttribute('aria-selected',on);b.setAttribute('aria-current',on);
+  b.tabIndex=on?0:-1;b.classList.toggle('done',j<i)});
+ var j=JR[i];
+ $('jtx').innerHTML='<div class="jtx"><h3></h3><p></p></div>';
+ $('jtx').querySelector('h3').textContent=j.t;
+ $('jtx').querySelector('p').textContent=j.d;
+ $('jill').innerHTML='<img src="'+j.ill+'" alt="">';
+ var prog=$('jprog');if(prog)prog.style.height=(i/(JR.length-1)*100)+'%';
+ if(animate){animate($('jtx').querySelectorAll('h3,p'),{opacity:[0,1],transform:['translateY(10px)','none']},
+   {duration:.42,delay:stagger(.05),easing:EASE});
+  animate($('jill').firstChild,{opacity:[0,1],transform:['scale(.96)','none']},{duration:.5,easing:EASE})}
+ if(focus)jns[i].focus()}
+$('rail').addEventListener('click',function(e){var b=e.target.closest('.jn');if(b)jset(+b.dataset.i)});
+$('rail').addEventListener('keydown',function(e){var k=e.key,n=jcur;
+ if(k==='ArrowDown'||k==='ArrowRight')n=(jcur+1)%JR.length;
+ else if(k==='ArrowUp'||k==='ArrowLeft')n=(jcur-1+JR.length)%JR.length;
+ else if(k==='Home')n=0;else if(k==='End')n=JR.length-1;else return;
+ e.preventDefault();jset(n,true)});
+jset(0);
+(function(){var wrap=$('jwrap'),stick=wrap.firstElementChild;
+ function size(){wrap.style.height=(stick.offsetHeight+(RM?0:innerHeight*.55*(JR.length-1)))+'px'}
+ function onScroll(){
+  var span=wrap.offsetHeight-stick.offsetHeight;if(span<=0)return;
+  var top=wrap.getBoundingClientRect().top;
+  var p=Math.max(0,Math.min(1,(74-top)/span));
+  jset(Math.min(JR.length-1,Math.floor(p*JR.length*.999)))}
+ size();onScroll();addEventListener('resize',function(){size();onScroll()});
+ addEventListener('scroll',onScroll,{passive:true})})();
 
-  var sto=document.getElementById('stories'),tr=document.getElementById('stoTrack');
+/* ---- stories: sample copy, slid left to right by the page scroll ------- */
+var SW=[
+ ['I came in unable to manage the stairs at home. The pain was not the first thing they treated; what was causing it was.','Pain, Mobility &amp; Rehabilitation'],
+ ['Four doctors had handed me the same prescription. This was the first one who explained what was actually driving it.','Women’s Wellbeing'],
+ ['Through chemotherapy I was never rushed. Someone was checking every week whether I was eating and sleeping.','Cancer Support &amp; Recovery'],
+ ['Six years of needing something to fall asleep. The plan I was given was small enough that I actually kept to it.','Mind, Sleep &amp; Stress'],
+ ['He told me plainly that one of my two problems was not his to treat, and sent me elsewhere for it. I believed everything else he said after that.','The first consultation']];
+$('strack').innerHTML=SW.map(function(){return '<figure class="qc">'+
+ '<span class="qi" aria-hidden="true">&ldquo;</span><blockquote></blockquote><cite></cite></figure>'}).join('');
+[].forEach.call($('strack').children,function(fig,i){
+ fig.querySelector('blockquote').textContent=SW[i][0];
+ fig.querySelector('cite').innerHTML=SW[i][1]});
+(function(){var box=$('stw'),track=$('strack');
+ function onScroll(){
+  if(innerWidth<=860){track.style.transform='';return}
+  var over=track.scrollWidth-box.clientWidth;if(over<=0){track.style.transform='';return}
+  var r=box.getBoundingClientRect();
+  /* hold on the first card until the section is properly in view, then travel
+     through to the last, so the row reads left to right */
+  var p=Math.max(0,Math.min(1,(innerHeight*.85-r.top)/(r.height+innerHeight*.45)));
+  track.style.transform='translate3d('+(-over*p).toFixed(1)+'px,0,0)'}
+ onScroll();addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll)})();
 
-  var drow=document.getElementById('drow'),cnt=document.getElementById('cnt');
-  function gap(){return parseFloat(getComputedStyle(drow).columnGap)||32;}
-  function step(d){var c=drow.querySelector('.dc');drow.scrollBy({left:d*(c.offsetWidth+gap()),behavior:'smooth'});}
-  document.getElementById('prev').addEventListener('click',function(){step(-1);});
-  document.getElementById('next').addEventListener('click',function(){step(1);});
-  var pv2=document.getElementById('prev'),nx2=document.getElementById('next'),bar=document.getElementById('bar');
-  function dState(){var c=drow.querySelector('.dc'),max=drow.scrollWidth-drow.clientWidth,p=max>0?drow.scrollLeft/max:1;var i=Math.round(p*(drow.children.length-1))+1;cnt.textContent=(i<10?'0':'')+i;
-    bar.style.width=Math.max(12,(Math.min(1,drow.clientWidth/drow.scrollWidth)*100)*(1-p)+100*p)+'%';pv2.disabled=drow.scrollLeft<4;nx2.disabled=drow.scrollLeft>=max-4;}
-  drow.addEventListener('scroll',dState);addEventListener('resize',dState);dState();
+/* ---- practitioners, one per pillar ------------------------------------- */
+var DOC=[
+ ['i/d1.jpg','Dr. Ananya Rao','Allopathy Doctor','Starts with the evidence and keeps watch over anything you already take. Expect direct answers, and no guesswork.'],
+ ['i/d2.jpg','Vaidya Rajesh Kumar','Ayurveda Vaidya','Builds the therapy and diet schedule, then adjusts it as you respond. Expect to be asked about your day, not only your symptoms.'],
+ ['i/d3.jpg','Dr. Siddharth Siddh','Siddha Expert','Reads the pulse, and takes the cases that have not moved elsewhere. Expect unhurried questions before any conclusion.']];
+$('drw').innerHTML=DOC.map(function(d){return '<article class="dc">'+
+ '<div class="ph"><img src="'+d[0]+'" alt="'+d[1]+'"></div>'+
+ '<div class="tx"><small>'+d[2]+'</small><h3>'+d[1]+'</h3><p></p></div></article>'}).join('');
+[].forEach.call($('drw').children,function(c,i){c.querySelector('p').textContent=DOC[i][3]});
+(function(){var w=$('drw'),total=w.children.length;
+ function step(){return w.firstElementChild.getBoundingClientRect().width+18}
+ function upd(){var max=w.scrollWidth-w.clientWidth;
+  $('dn').textContent='0'+Math.min(total,Math.round(w.scrollLeft/step())+1);
+  $('dp').disabled=w.scrollLeft<4;$('dx').disabled=w.scrollLeft>max-4}
+ $('dp').addEventListener('click',function(){w.scrollBy({left:-step(),behavior:RM?'auto':'smooth'})});
+ $('dx').addEventListener('click',function(){w.scrollBy({left:step(),behavior:RM?'auto':'smooth'})});
+ w.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd()})();
 
-  var tk=false;
-  function onScroll(){if(tk)return;tk=true;requestAnimationFrame(function(){tk=false;if(reduce)return;
-    setStep(Math.min(3,Math.floor(prog(steps)*4)));
-    var q=prog(sto),max=tr.scrollWidth-innerWidth+Math.max(24,innerWidth*.06);tr.style.transform='translate3d('+(-q*Math.max(0,max))+'px,0,0)';});}
-  addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();if(reduce)setStep(0);
+/* ---- environment: a 3D campus map, and the immersive view inside each space ---- */
+var ENV=[
+ {img:'i/e-campus.jpg',name:'Treatment block',alt:'The lit treatment wing at dusk',
+  card:'Consulting rooms and the therapy wing, opening onto shaded verandas rather than corridors. Most of your appointments happen here.',
+  box:[-13,-5,20,5,11],
+  spots:[
+   {yaw:-19,pitch:3,l:'Consulting rooms',t:'Each room takes one consultation at a time, with the door closed and nobody queueing outside it.'},
+   {yaw:5,pitch:-4,l:'Open verandas',t:'The treatment spaces open to the air rather than sealing you in. Most of the block is shaded, not enclosed.'},
+   {yaw:22,pitch:5,l:'The hills behind',t:'The wing faces the Velliangiri range, which is the first thing you see when you step out of a session.'}]},
+ {img:'i/in2.jpg',name:'Dispensary',alt:'Preparations and equipment on the dispensary bench',
+  card:'Where formulations are made up against your prescription and checked against anything you already take.',
+  box:[11,-11,13,4,9],
+  spots:[
+   {yaw:-13,pitch:1,l:'Made up for you',t:'Formulations are prepared against your prescription rather than taken off a shelf.'},
+   {yaw:14,pitch:2,l:'Checked against your list',t:'Anything dispensed here is cross-checked against the medication you already take.'}]},
+ {img:'i/in1.jpg',name:'Therapy room',alt:'A treatment room at the centre',
+  card:'One treatment at a time, one room at a time, with the same therapist through your programme wherever that can be arranged.',
+  box:[12,10,13,4,11],
+  spots:[
+   {yaw:-13,pitch:0,l:'Therapy table',t:'Treatments are given by hand, by the same therapist through your program wherever that can be arranged.'},
+   {yaw:14,pitch:2,l:'One room, one person',t:'A room is given over to a single treatment at a time, so a session is never interrupted or hurried.'}]},
+ {img:'i/sp6.jpg',name:'Practice hall',alt:'A group practice session in the hall',
+  card:'Practices taught in small groups early in the day, then adjusted person by person before you take them home.',
+  box:[-10,13,19,3.6,13],
+  spots:[
+   {yaw:-11,pitch:0,l:'Taught in small groups',t:'Practices are taught in small groups, then adjusted person by person.'},
+   {yaw:16,pitch:-3,l:'Before the heat',t:'The first session of the day runs early, while the hall is still cool.'}]}];
 
-  var A=[
-    {c:'Pain & Mobility',t:'Understanding joint pain: causes and when to seek care',i:'img/pain-hd.jpg',b:'An overview of common causes of joint pain, and the signs that mean it is time to see a doctor.'},
-    {c:"Women's Wellbeing",t:'PCOS explained: symptoms, diagnosis and care options',i:'img/women.jpg',b:'What PCOS is, how it is diagnosed, and the different approaches to care.'},
-    {c:'Cancer Support',t:'Supportive care during cancer treatment: what it means',i:'img/cancer.jpg',b:'How supportive care can sit alongside your oncology treatment, and why your oncologist should always be informed.'},
-    {c:'Mind, Sleep & Stress',t:'Sleep and stress: how they affect each other',i:'img/meditate-hd.jpg',b:'Why stress and sleep so often move together, and where to start if you are struggling with either.'},
-    {c:'Mind, Sleep & Stress',t:'A simple daily routine to support rest',i:'img/yoga.jpg',b:'Everyday habits that can support better sleep, from timing and light to winding down.'}
-  ];
-  var al=document.getElementById('al'),pv=document.getElementById('pv');
-  al.innerHTML=A.map(function(a,i){return '<button type="button" class="ai'+(i===0?' on':'')+'" data-i="'+i+'"><span class="t"><small>'+a.c+'</small><b>'+a.t+'</b></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg></button>';}).join('');
-  function showA(i){var a=A[i];pv.innerHTML='<div class="fade"><div class="im"><img src="'+a.i+'" alt=""></div><div class="tx2"><span class="tag">'+a.c+'</span><h3>'+a.t+'</h3><p>'+a.b+'</p></div></div>';}
-  showA(0);
-  function pick(b){al.querySelectorAll('.ai').forEach(function(x){x.classList.remove('on');});b.classList.add('on');showA(+b.dataset.i);}
-  al.addEventListener('click',function(e){var b=e.target.closest('.ai');if(b)pick(b);});
-  al.addEventListener('mouseover',function(e){var b=e.target.closest('.ai');if(b&&hover()&&!b.classList.contains('on'))pick(b);});
+$('spaces').innerHTML=ENV.map(function(e,i){return '<button data-i="'+i+'" aria-pressed="'+(i===0)+'">'+
+ '<span class="nn">0'+(i+1)+'</span><span class="nm2"></span></button>'}).join('');
+[].forEach.call($('spaces').children,function(b,i){b.querySelector('.nm2').textContent=ENV[i].name});
 
-  document.querySelectorAll('.fi button').forEach(function(b){b.addEventListener('click',function(){var f=b.parentNode,on=f.classList.toggle('on');b.setAttribute('aria-expanded',on?'true':'false');});});
+var cur=0, stop=-1, routeP=0, enterSpace=function(){}, faceSpace=function(){}, showMode=function(){};
+function cssv(k,f){var v=getComputedStyle(document.documentElement).getPropertyValue(k).trim();return v||f}
 
-  var fm=document.getElementById('fm');
-  fm.addEventListener('submit',function(e){e.preventDefault();var bad=false,er=document.getElementById('ferr');fm.querySelectorAll('[required]').forEach(function(i){if(!i.value.trim()){i.style.borderColor='#B3261E';bad=true;}else i.style.borderColor='';});er.hidden=!bad;if(!bad)fm.classList.add('sent');});
+/* ---- the map ---- */
+(function(){
+ var host=$('map');if(!window.THREE)return;
+ var W=host.clientWidth||1200,H=host.clientHeight||600;
+ var ren=new THREE.WebGLRenderer({antialias:true,alpha:true});
+ ren.setPixelRatio(Math.min(devicePixelRatio,2));ren.setSize(W,H);
+ host.insertBefore(ren.domElement,host.firstChild);
+ var scene=new THREE.Scene();
+ var FRUS=58;
+ var cam=new THREE.OrthographicCamera(-FRUS*W/H/2,FRUS*W/H/2,FRUS/2,-FRUS/2,.1,600);
+ var ground=cssv('--cream','#FBF6EC'),built=cssv('--card','#fff'),edge=cssv('--ink','#3A2213'),
+     soft=cssv('--putty','#EDE6D6'),hot=cssv('--orange','#EC671B');
+ function mass(x,z,w,h,d,col,store){
+  var g=new THREE.BoxGeometry(w,h,d);
+  var m=new THREE.Mesh(g,new THREE.MeshBasicMaterial({color:col}));
+  m.position.set(x,h/2,z);scene.add(m);
+  var e=new THREE.LineSegments(new THREE.EdgesGeometry(g),
+    new THREE.LineBasicMaterial({color:edge,transparent:true,opacity:.55}));
+  e.position.copy(m.position);scene.add(e);
+  if(store)store.push(m);
+  return m}
+ /* ground, paths, the hills behind, then the four spaces */
+ mass(0,0,62,.6,58,ground);
+ mass(0,-2,6,.9,40,soft); mass(-2,12,34,.9,5,soft); mass(4,-10,30,.9,5,soft);
+ var blocks=[];
+ ENV.forEach(function(e){
+  var b=e.box;blocks.push(mass(b[0],b[1],b[2],b[3],b[4],built))});
+ /* a few planters so the ground reads as a place, in the page's own neutrals */
+ [[-22,4],[-21,-15],[22,-2],[2,20],[-2,-19],[21,18]].forEach(function(q){
+  mass(q[0],q[1],2.4,1.6,2.4,soft)});
+
+ var azim=38,tAz=38,down=false,px=0;
+ function place(){
+  var el=THREE.MathUtils.degToRad(33),az=THREE.MathUtils.degToRad(azim),r=200;
+  cam.position.set(r*Math.cos(el)*Math.sin(az),r*Math.sin(el),r*Math.cos(el)*Math.cos(az));
+  cam.lookAt(0,2,0)}
+ var pins=ENV.map(function(e,i){
+  var b=e.box;
+  var btn=document.createElement('button');btn.className='pin';btn.type='button';
+  btn.innerHTML='<span class="nn">0'+(i+1)+'</span><span></span>';
+  btn.lastChild.textContent=e.name;
+  btn.setAttribute('aria-label','Step inside: '+e.name);
+  btn.addEventListener('click',function(ev){ev.stopPropagation();enterSpace(i)});
+  $('pins').appendChild(btn);
+  return {btn:btn,vec:new THREE.Vector3(b[0],b[3]+2.5,b[1])}});
+ var line=$('routeline'),base=$('routebase'),lead=$('routelead'),card=$('mcard');
+ var PAN=11,pan=0,panT=0;
+ function pinPlace(){
+  var w=host.clientWidth,h=host.clientHeight,pts=[];
+  pins.forEach(function(pn,i){
+   var v=pn.vec.clone().project(cam);
+   var sx=(v.x*.5+.5)*w, sy=(-v.y*.5+.5)*h;
+   pts.push([sx,sy]);
+   var vis=sx>70&&sx<w-70&&sy>40&&sy<h-60;
+   pn.btn.style.opacity=vis?1:0;pn.btn.style.pointerEvents=vis?'auto':'none';
+   pn.btn.style.left=sx.toFixed(1)+'px';pn.btn.style.top=sy.toFixed(1)+'px';
+   pn.btn.dataset.active=(i===cur&&stop>=0)});
+  /* the route runs pin to pin and draws itself as the scroll advances */
+  if(line&&pts.length){
+   var d='M'+pts.map(function(q){return q[0].toFixed(1)+' '+q[1].toFixed(1)}).join(' L ');
+   base.setAttribute('d',d);line.setAttribute('d',d);
+   var L=line.getTotalLength?line.getTotalLength():0;
+   if(L){line.style.strokeDasharray=L;line.style.strokeDashoffset=(L*(1-routeP)).toFixed(1)}}
+  /* the card sits on its pin, so it stays put while the map turns */
+  /* the card docks to the edge away from its pin, so the campus is never covered,
+     with a dashed leader back to the building it describes */
+  if(card&&stop>=0&&pts[stop]){
+   var cw=card.offsetWidth||330,ch=card.offsetHeight||330;
+   var px2=pts[stop][0],py=pts[stop][1];
+   var toRight=px2<w*.52;
+   var lx=toRight?(w-cw-26):26;
+   var ty=Math.min(Math.max(22,py-ch*.45),h-ch-22);
+   card.style.left=lx.toFixed(1)+'px';card.style.top=ty.toFixed(1)+'px';
+   card.style.transformOrigin=toRight?'0% 42%':'100% 42%';
+   panT=toRight?PAN:-PAN;
+   var ex=toRight?lx:lx+cw, ey=ty+ch*.42;
+   lead.setAttribute('d','M'+px2.toFixed(1)+' '+py.toFixed(1)+' L '+ex.toFixed(1)+' '+ey.toFixed(1));
+   lead.style.opacity=1}
+  else{panT=0;lead.style.opacity=0}}
+ (function loop(){
+  azim+=(tAz-azim)*.09;pan+=(panT-pan)*.07;
+  cam.left=-FRUS*W/H/2+pan;cam.right=FRUS*W/H/2+pan;cam.updateProjectionMatrix();
+  place();
+  blocks.forEach(function(m,i){m.material.color.set(i===cur?hot:built)});
+  ren.render(scene,cam);pinPlace();requestAnimationFrame(loop)})();
+ host.addEventListener('pointerdown',function(e){
+  if(e.target.closest('button'))return;
+  down=true;px=e.clientX;host.classList.add('drag');host.setPointerCapture(e.pointerId)});
+ host.addEventListener('pointermove',function(e){
+  if(!down)return;tAz-=(e.clientX-px)*.3;px=e.clientX});
+ ['pointerup','pointercancel','pointerleave'].forEach(function(t){
+  host.addEventListener(t,function(){down=false;host.classList.remove('drag')})});
+ host.addEventListener('keydown',function(e){
+  if(e.key==='ArrowLeft')tAz-=12;else if(e.key==='ArrowRight')tAz+=12;else return;e.preventDefault()});
+ addEventListener('resize',function(){
+  W=host.clientWidth;H=host.clientHeight;
+  cam.left=-FRUS*W/H/2;cam.right=FRUS*W/H/2;cam.top=FRUS/2;cam.bottom=-FRUS/2;
+  cam.updateProjectionMatrix();ren.setSize(W,H)});
+ faceSpace=function(i){var b=ENV[i].box;tAz=38+(b[0]>0?-26:26)};
+})();
+
+/* ---- inside a space ---- */
+(function(){
+ var host=$('pano'),flat=$('panoflat');
+ if(!window.THREE)return;
+ var W=host.clientWidth||1200,H=host.clientHeight||600;
+ var ren=new THREE.WebGLRenderer({antialias:true});
+ ren.setPixelRatio(Math.min(devicePixelRatio,2));ren.setSize(W,H);
+ host.insertBefore(ren.domElement,flat.nextSibling);
+ flat.style.display='none';
+ var scene=new THREE.Scene();
+ var cam=new THREE.PerspectiveCamera(55,W/H,1,1100);
+ /* a clamped cylindrical segment, not a sphere: the source photographs are flat,
+    so a sphere would show a seam and pole stretch */
+ var ARC=190,MAXLON=30,MAXLAT=8;
+ var geo=new THREE.CylinderGeometry(500,500,620,80,1,true,
+   THREE.MathUtils.degToRad(-ARC/2),THREE.MathUtils.degToRad(ARC));
+ geo.scale(-1,1,1);
+ var loader=new THREE.TextureLoader();
+ var mat=new THREE.MeshBasicMaterial();
+ scene.add(new THREE.Mesh(geo,mat));
+ function putTex(url,done){
+  loader.load(url,function(tex){
+   tex.minFilter=THREE.LinearFilter;tex.generateMipmaps=false;
+   mat.map=tex;mat.needsUpdate=true;if(done)done()},
+   null,
+   function(){flat.style.display='';ren.domElement.style.display='none'})}
+ putTex(ENV[0].img);
+ var lon=0,lat=0,tLon=0,tLat=0,down=false,px=0,py=0;
+ function render(){
+  lon+=(tLon-lon)*.08;lat+=(tLat-lat)*.08;
+  var phi=THREE.MathUtils.degToRad(90-lat),theta=THREE.MathUtils.degToRad(lon);
+  cam.lookAt(500*Math.sin(phi)*Math.sin(theta),500*Math.cos(phi),500*Math.sin(phi)*Math.cos(theta));
+  ren.render(scene,cam);requestAnimationFrame(render)}
+ render();
+ host.addEventListener('pointerdown',function(e){
+  if(e.target.closest('.spot,.spotcard,button'))return;
+  down=true;px=e.clientX;py=e.clientY;host.classList.add('drag');host.setPointerCapture(e.pointerId)});
+ host.addEventListener('pointermove',function(e){
+  if(!down)return;
+  tLon=Math.max(-MAXLON,Math.min(MAXLON,tLon-(e.clientX-px)*.11));
+  tLat=Math.max(-MAXLAT,Math.min(MAXLAT,tLat+(e.clientY-py)*.07));
+  px=e.clientX;py=e.clientY});
+ ['pointerup','pointercancel','pointerleave'].forEach(function(t){
+  host.addEventListener(t,function(){down=false;host.classList.remove('drag')})});
+ host.addEventListener('keydown',function(e){
+  var k=e.key;
+  if(k==='ArrowLeft')tLon=Math.max(-MAXLON,tLon-9);
+  else if(k==='ArrowRight')tLon=Math.min(MAXLON,tLon+9);
+  else if(k==='ArrowUp')tLat=Math.min(MAXLAT,tLat+5);
+  else if(k==='ArrowDown')tLat=Math.max(-MAXLAT,tLat-5);
+  else return;
+  e.preventDefault()});
+ addEventListener('resize',function(){W=host.clientWidth;H=host.clientHeight;
+  cam.aspect=W/H;cam.updateProjectionMatrix();ren.setSize(W,H)});
+ /* hotspots are projected every frame, so each stays on the thing it describes */
+ var layer=$('spots'),marks=[],openIdx=-1,card=null;
+ function world(h){
+  var phi=THREE.MathUtils.degToRad(90-h.pitch),th=THREE.MathUtils.degToRad(h.yaw);
+  return new THREE.Vector3(480*Math.sin(phi)*Math.sin(th),480*Math.cos(phi),480*Math.sin(phi)*Math.cos(th))}
+ function closeCard(){if(card){card.remove();card=null}
+  marks.forEach(function(m){m.btn.setAttribute('aria-expanded','false')});openIdx=-1}
+ function build(i){
+  closeCard();layer.innerHTML='';marks=[];
+  (ENV[i].spots||[]).forEach(function(h,k){
+   var btn=document.createElement('button');
+   btn.className='spot';btn.type='button';btn.setAttribute('aria-expanded','false');
+   btn.setAttribute('aria-label','Show: '+h.l);btn.innerHTML='<i></i><i></i>';
+   btn.addEventListener('click',function(ev){
+    ev.stopPropagation();
+    if(openIdx===k){closeCard();return}
+    closeCard();openIdx=k;btn.setAttribute('aria-expanded','true');
+    card=document.createElement('div');card.className='spotcard';
+    var b=document.createElement('b');b.textContent=h.l;
+    var pe=document.createElement('p');pe.textContent=h.t;
+    card.appendChild(b);card.appendChild(pe);layer.appendChild(card);place()});
+   layer.appendChild(btn);marks.push({btn:btn,vec:world(h)})})}
+ function place(){
+  if(!marks.length)return;
+  var w=host.clientWidth,hh=host.clientHeight;
+  marks.forEach(function(m,k){
+   var v=m.vec.clone().project(cam);
+   var sx=(v.x*.5+.5)*w, sy=(-v.y*.5+.5)*hh;
+   var vis=v.z<1&&sx>30&&sx<w-30&&sy>30&&sy<hh-30;
+   m.btn.style.opacity=vis?1:0;m.btn.style.pointerEvents=vis?'auto':'none';
+   m.btn.style.left=sx.toFixed(1)+'px';m.btn.style.top=sy.toFixed(1)+'px';
+   if(k===openIdx&&card){
+    var cw=card.offsetWidth||290;
+    var cx=Math.max(cw/2+12,Math.min(w-cw/2-12,sx));
+    var below=sy+24+card.offsetHeight<hh-12;
+    card.style.left=cx.toFixed(1)+'px';
+    card.style.top=(below?sy+24:sy-24-card.offsetHeight).toFixed(1)+'px';
+    card.style.opacity=vis?1:0}})}
+ build(0);
+ host.addEventListener('pointerdown',function(e){if(!e.target.closest('.spot,.spotcard'))closeCard()});
+ (function loop(){place();requestAnimationFrame(loop)})();
+ window.__setInside=function(i){putTex(ENV[i].img,function(){tLon=0;tLat=0;build(i)});
+  $('panokicker').textContent=ENV[i].name;
+  flat.src=ENV[i].img;flat.alt=ENV[i].alt}})();
+
+/* ---- mode, and keeping map, pills and view in step ---- */
+showMode=function(m){
+ $('map').dataset.on=(m==='map');$('pano').dataset.on=(m==='in')};
+function select(i,go){
+ cur=i;
+ [].forEach.call($('spaces').children,function(b,j){b.setAttribute('aria-pressed',j===i)});
+ $('mapname').textContent=ENV[i].name;
+ if(window.__setInside)window.__setInside(i);
+ faceSpace(i);
+ if(go)showMode('in')}
+enterSpace=function(i){goFrame(i+1)};
+function openInside(){showMode('in');$('mclose').hidden=false;$('pano').focus({preventScroll:true})}
+function closeInside(){showMode('map');$('mclose').hidden=true}
+$('spaces').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+ goFrame(+b.dataset.i+1)});
+$('mcin').addEventListener('click',function(){openInside()});
+$('mclose').addEventListener('click',function(){closeInside()});
+addEventListener('keydown',function(e){if(e.key==='Escape'&&$('pano').dataset.on==='true')closeInside()});
+$('play').addEventListener('click',function(){say('Campus film','Video to be linked')});
+select(0,false);
+
+/* ---- the stage is a scroll sequence: the map, then a glimpse inside each space ---- */
+var goFrame=function(){};
+(function(){
+ var wrap=$('envwrap'),stick=wrap.firstElementChild,prog=$('envprog'),step=$('envstep');
+ var FRAMES=ENV.length+1;                /* 0 is the map, then one per space */
+ var frame=-1;
+ function size(){wrap.style.height=(stick.offsetHeight+(RM?0:innerHeight*.6*(FRAMES-1)))+'px'}
+ function span(){return wrap.offsetHeight-stick.offsetHeight}
+ function setFrame(k){
+  if(k===frame)return;frame=k;
+  stop=k-1;
+  var card=$('mcard');
+  if(k===0){card.dataset.on='false';step.textContent='01 / 0'+FRAMES+' \u00b7 The grounds'}
+  else{
+   var e=ENV[stop];select(stop,false);
+   $('mcimg').src=e.img;$('mcimg').alt=e.alt;
+   $('mcindex').textContent='Stop 0'+(stop+1)+' of 0'+ENV.length;
+   $('mcname').textContent=e.name;$('mctext').textContent=e.card;
+   card.dataset.on='true';
+   step.textContent='0'+(k+1)+' / 0'+FRAMES+' \u00b7 '+e.name}
+ }
+ function onScroll(){
+  var sp=span();if(sp<=0)return;
+  var p=Math.max(0,Math.min(1,(64-wrap.getBoundingClientRect().top)/sp));
+  prog.style.width=(p*100).toFixed(1)+'%';
+  routeP=Math.max(0,Math.min(1,(p*FRAMES-1)/(FRAMES-1)));
+  setFrame(Math.min(FRAMES-1,Math.floor(p*FRAMES*.999)))}
+ goFrame=function(k){
+  var sp=span();if(sp<=0)return;
+  var y=wrap.offsetTop-64+sp*((k+.5)/FRAMES);
+  scrollTo({top:y,behavior:RM?'auto':'smooth'})};
+ size();onScroll();
+ addEventListener('resize',function(){size();onScroll()});
+ addEventListener('scroll',onScroll,{passive:true})})();
+
+/* ---- form --------------------------------------------------------------- */
+$('f').addEventListener('submit',function(e){e.preventDefault();
+ var name=$('f-name'),wa=$('f-wa'),terms=$('f-terms'),msg=$('ok'),bad=null;
+ [name,wa].forEach(function(el){var empty=!el.value.trim();
+  el.setAttribute('aria-invalid',empty);if(empty&&!bad)bad=el});
+ if(bad){msg.textContent='Please add your name and Whatsapp number.';bad.focus();
+  if(animate)animate($('f'),{transform:['translateX(-4px)','translateX(4px)','none']},{duration:.3});return}
+ if(!terms.checked){msg.textContent='Please accept the Terms to continue.';terms.focus();return}
+ msg.textContent='Thank you, '+name.value.trim().split(' ')[0]+'. A doctor will be in touch on Whatsapp.';
+ $('f').reset();[name,wa].forEach(function(el){el.setAttribute('aria-invalid','false')})});
+
+/* ---- reading list --------------------------------------------------------- */
+var IN=[
+ {t:'The difference between tired and depleted',img:'i/in1.jpg',k:'Mind, Sleep & Stress',
+  d:'Tiredness answers to a weekend. Depletion is what a body does after months on reserve, and rest alone will not reach it. Telling the two apart is the first thing a doctor here does, because the treatment diverges completely from that point on.'},
+ {t:'Why your knee pain comes back every winter',img:'i/c-pain.jpg',k:'Pain, Mobility & Rehabilitation',
+  d:'Cold stiffens the tissue around a joint that was already inflamed, so an old injury reports in once a year. Treating the inflammation rather than the ache is what ends the annual appointment.'},
+ {t:'PCOS is not one condition, and that is why one treatment rarely works',img:'i/c-women.jpg',k:'Women’s Wellbeing',
+  d:'Insulin, inflammation, thyroid, stress — any of them can produce the same diagnosis, and each needs a different plan. This is why the first appointment builds a full picture instead of writing a prescription.'},
+ {t:'What Ayurveda can and cannot do during chemotherapy',img:'i/c-cancer.jpg',k:'Cancer Support & Recovery',
+  d:'It will not treat the cancer, and anyone who tells you otherwise should be left alone. It can hold appetite, sleep and strength through treatment — and it has to be timed around the oncology schedule, which is why both doctors speak to each other here.'},
+ {t:'Blog heading will go here Blog title heading will go here',img:'i/in2.jpg',k:'Programs',d:null},
+ {t:'Blog heading will go here Blog title heading will go here',img:'i/in3.jpg',k:'Programs',d:null}];
+$('acl').innerHTML=IN.map(function(a,i){return '<button role="tab" data-i="'+i+'" aria-selected="'+(i===0)+'" '+
+ 'aria-current="'+(i===0)+'" aria-controls="feat"><span class="nn">0'+(i+1)+'</span><span class="ti"></span>'+
+ '<span class="ax" aria-hidden="true">+</span></button>'}).join('');
+[].forEach.call($('acl').children,function(b,i){b.querySelector('.ti').textContent=IN[i].t});
+function feat(i){var a=IN[i];
+ $('feat').innerHTML='<img alt=""><div class="fb"><h3></h3>'+
+  (a.d?'<p></p>':PH)+'<button class="lnk" type="button" data-read="1">Read the article</button></div>';
+ var f=$('feat');f.querySelector('img').src=a.img;
+ f.querySelector('h3').textContent=a.t;
+ if(a.d)f.querySelector('p').textContent=a.d;
+ [].forEach.call($('acl').children,function(b,j){
+  b.setAttribute('aria-current',j===i);b.setAttribute('aria-selected',j===i)});
+ if(animate)animate(f.querySelectorAll('img,.fb>*'),{opacity:[0,1],transform:['translateY(10px)','none']},
+  {duration:.4,delay:stagger(.045),easing:EASE})}
+$('acl').addEventListener('click',function(e){var b=e.target.closest('button');if(b)feat(+b.dataset.i)});
+$('feat').addEventListener('click',function(e){if(e.target.closest('[data-read]'))say('Article','Page not built yet')});
+feat(0);
+
+/* ---- faq: the Figma supplies the answers --------------------------------- */
+var FAQ=[
+ ['Can this help with my condition?','Very possibly. Ayurveda treats the person, not only the condition. Book a free consultation and a doctor will tell you honestly whether we are the right place.'],
+ ['Which system of medicine should I choose?','You don’t have to choose. Start with a free consultation; your doctor recommends what your condition needs.'],
+ ['Can I continue my current medication?','Yes. Our doctors review your case and integrate treatment safely. Any change to your medication is made gradually and only under medical guidance.'],
+ ['How long does treatment take?','From a single consultation to 21 days, depending on your condition. Your doctor will recommend the duration.'],
+ ['Do I have to stay at the centre?','No. Many programs are available non-residentially, with online follow-up.']];
+$('faqlist').innerHTML=FAQ.map(function(f,i){return '<details name="faq"'+(i===0?' open':'')+'>'+
+ '<summary><span class="q"></span><span class="ax" aria-hidden="true">+</span></summary><div class="ans"></div></details>'}).join('');
+[].forEach.call($('faqlist').children,function(d,i){
+ d.querySelector('.q').textContent=FAQ[i][0];d.querySelector('.ans').textContent=FAQ[i][1]});
+
+/* ---- entrances ------------------------------------------------------------ */
+if(animate){
+ animate(document.querySelectorAll('[data-m="hero"]'),{opacity:[0,1],transform:['translateY(18px)','none']},
+  {duration:.7,delay:stagger(.09),easing:EASE});
+ animate($('heroimg'),{opacity:[0,1],scale:[1.06,1.04]},{duration:1,easing:EASE})}
+if(inView&&animate){
+ var SEQ=[['.hd',null],['.panels','.pan'],['.bento','.sy'],['#drw',':scope > *'],['.spaces',':scope > button'],
+  ['.enq',null],['.outs',':scope > .out'],['.acl',':scope > button'],['.fq',':scope > details'],['.split .pic',null]];
+ SEQ.forEach(function(s){
+  [].forEach.call(document.querySelectorAll(s[0]),function(box){
+   if(box.getBoundingClientRect().top<innerHeight)return;
+   var targets=s[1]?[].slice.call(box.querySelectorAll(s[1])):[box];
+   if(!targets.length)return;
+   targets.forEach(function(t){t.classList.add('pre')});
+   inView(box,function(){
+    targets.forEach(function(t){t.classList.remove('pre')});
+    animate(targets,{opacity:[0,1],transform:['translateY(20px)','none']},
+     {duration:.55,delay:stagger(.06),easing:EASE})},{margin:'-60px 0px -8% 0px'})})});
+ setTimeout(function(){[].forEach.call(document.querySelectorAll('.pre'),function(e){e.classList.remove('pre')})},4000)}
+
+/* ---- the approach: five systems placed around one plan ---- */
+(function(){
+ var box=$('conv');if(!box)return;
+ var svg=$('convlines'),note=$('cnote');
+ var N=[['01','Modern medicine','What is measured, before anything is decided.'],
+        ['02','Ayurveda','The cause, worked on over the length of a programme.'],
+        ['03','Siddha','A second reading, for what has not moved.'],
+        ['04','Yoga','The part of the plan that leaves with you.'],
+        ['05','Conscious living','The day built around the treatment.']];
+ var REST='Five readings of the same person, and one plan drawn from all of them.';
+ var nodes=N.map(function(n,i){
+  var b=document.createElement('button');
+  b.className='node';b.type='button';b.dataset.i=i;b.dataset.on='false';
+  b.innerHTML='<em></em><span></span>';
+  b.firstChild.textContent=n[0];b.lastChild.textContent=n[1];
+  box.appendChild(b);return b});
+ var lines=N.map(function(){
+  var l=document.createElementNS('http://www.w3.org/2000/svg','line');
+  svg.appendChild(l);return l});
+ function layout(){
+  var w=box.clientWidth,h=box.clientHeight,cx=w/2,cy=h/2;
+  var rx=Math.min(w*.40,250),ry=Math.min(h*.35,185);
+  nodes.forEach(function(b,i){
+   var a=(-90+i*72)*Math.PI/180;
+   var x=cx+rx*Math.cos(a),y=cy+ry*Math.sin(a);
+   b.style.left=x+'px';b.style.top=y+'px';
+   var l=lines[i];
+   l.setAttribute('x1',cx);l.setAttribute('y1',cy);
+   l.setAttribute('x2',x);l.setAttribute('y2',y)})}
+ function pick(i){
+  nodes.forEach(function(b,j){b.dataset.on=j===i;lines[j].classList.toggle('hot',j===i)});
+  note.textContent=i<0?REST:N[i][2];
+  if(animate)animate(note,{opacity:[0,1],y:[5,0]},{duration:.3,easing:EASE})}
+ nodes.forEach(function(b,i){
+  b.addEventListener('mouseenter',function(){pick(i)});
+  b.addEventListener('focus',function(){pick(i)});
+  b.addEventListener('click',function(){pick(i)})});
+ box.addEventListener('mouseleave',function(){pick(-1)});
+ layout();addEventListener('resize',layout);
+ if(inView&&animate)inView(box,function(){
+  lines.forEach(function(l,i){
+   var len=Math.hypot(l.x2.baseVal.value-l.x1.baseVal.value,l.y2.baseVal.value-l.y1.baseVal.value);
+   l.style.strokeDasharray=len;
+   animate(l,{strokeDashoffset:[len,0]},{duration:.7,delay:i*.09,easing:EASE})});
+  animate(nodes,{opacity:[0,1],scale:[.86,1]},{duration:.5,delay:stagger(.08),easing:EASE})},
+  {amount:.3});
+})();
+
+/* ---- interaction motion, section by section ------------------------------- */
+if(animate){
+ var EZ=function(st,dp){return SPRING?{easing:SPRING({stiffness:st,damping:dp})}:{duration:.32,easing:EASE}};
+
+ /* header — compacts once the hero has scrolled past */
+ var hdr=document.querySelector('header');
+ if(inView)inView($('top'),function(){hdr.dataset.compact='false';
+   return function(){hdr.dataset.compact='true'}},{margin:'-70px 0px 0px 0px'});
+
+ /* hero — the photograph drifts against the scroll */
+ if(scrollM&&!RM)scrollM(animate($('heroimg'),{y:['-2%','5%']},{easing:'linear'}),
+   {target:$('top'),offset:['start start','end start']});
+
+ /* outcomes — the figure lifts under the cursor */
+ [].forEach.call(document.querySelectorAll('.out'),function(el){
+  var fig=el.querySelector('b');
+  el.addEventListener('mouseenter',function(){animate(fig,{y:-6},EZ(320,18))});
+  el.addEventListener('mouseleave',function(){animate(fig,{y:0},EZ(320,18))})});
+
+ /* the two split photographs settle as they arrive */
+ if(scrollM&&!RM)[].forEach.call(document.querySelectorAll('.split .pic img'),function(img){
+  scrollM(animate(img,{scale:[1.12,1]},{easing:'linear'}),
+   {target:img.parentElement,offset:['start end','center center']})});
+
+ /* approach — the portrait drifts further than the landscape behind it */
+ if(scrollM&&!RM){ /* the portrait now answers the cursor, so no scroll parallax competes with it */ }
+
+ /* stories — the card nearest the middle of the screen carries the emphasis */
+ (function(){var cards=[].slice.call(document.querySelectorAll('.strack .qc'));
+  if(!cards.length||RM)return;
+  function tick(){var mid=innerWidth/2;
+   cards.forEach(function(c){var r=c.getBoundingClientRect();
+    if(r.right<0||r.left>innerWidth){c.style.opacity='';return}
+    var d=Math.min(1,Math.abs((r.left+r.width/2)-mid)/(innerWidth*.6));
+    c.style.opacity=(1-d*.4).toFixed(3)})}
+  tick();addEventListener('scroll',tick,{passive:true});addEventListener('resize',tick)})();
+
+ /* practitioners — the card lifts on hover */
+ [].forEach.call(document.querySelectorAll('.dc'),function(c){
+  c.addEventListener('mouseenter',function(){animate(c,{y:-8},EZ(240,20))});
+  c.addEventListener('mouseleave',function(){animate(c,{y:0},EZ(240,20))})});
+
+ /* reading list — the chosen row nudges across */
+ [].forEach.call($('acl').children,function(b){
+  b.addEventListener('click',function(){animate(b,{x:[0,6,0]},{duration:.35,easing:EASE})})});
+
+ /* FAQ — the answer opens to its own height instead of snapping */
+ [].forEach.call(document.querySelectorAll('#faqlist details'),function(d){
+  var ans=d.querySelector('.ans');
+  d.addEventListener('toggle',function(){
+   if(!d.open){ans.style.height='';return}
+   var h=ans.scrollHeight;
+   var a=animate(ans,{height:['0px',h+'px'],opacity:[0,1]},{duration:.42,easing:EASE});
+   if(a&&a.finished)a.finished.then(function(){ans.style.height='auto'}).catch(function(){})})});
+
+ /* enquiry — the confirmation arrives rather than appearing */
+ var okEl=$('ok');
+ if(window.MutationObserver)new MutationObserver(function(){
+  if(okEl.textContent)animate(okEl,{opacity:[0,1],y:[6,0]},{duration:.32,easing:EASE})})
+  .observe(okEl,{childList:true,characterData:true,subtree:true});
+}
 })();
 </script>
-</body>
-</html>
+
+</body></html>
