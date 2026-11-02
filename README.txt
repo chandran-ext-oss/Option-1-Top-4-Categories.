@@ -4,7 +4,17 @@ Contents
   index.html   the full page (HTML, CSS and JS in one file)
   img/         all photographs and illustrations used
 
-Deploy (any static host, no build step)
+Deploy with GitHub + Vercel (no build step)
+  1. Create an empty repo on GitHub (e.g. ihs-homepage) and push this folder:
+       git init && git add . && git commit -m "IHS homepage"
+       git branch -M main
+       git remote add origin https://github.com/<your-org>/ihs-homepage.git
+       git push -u origin main
+  2. On vercel.com choose Add New > Project > Import the repo.
+  3. Framework Preset: Other. Build Command: leave empty. Output Directory: leave empty (root). Click Deploy.
+  Every push to main then redeploys automatically.
+
+Other hosts
   Netlify : drag this folder onto app.netlify.com/drop
   Vercel  : run `vercel --prod` inside this folder
   S3 / CDN / Nginx / Apache : upload index.html and img/ to the web root
