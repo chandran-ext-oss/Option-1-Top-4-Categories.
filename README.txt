@@ -1,32 +1,36 @@
-Isha Health Solutions - homepage (static site)
+Isha Health Solutions — Option 1a landing page
+==============================================
 
-Contents
-  index.html   the full page (HTML, CSS and JS in one file)
-  img/         all photographs and illustrations used
+index.html      the complete page (HTML, CSS and JS in one file)
+i/ , img/       photographs, the Isha mark, and the Figma step illustrations
 
-Deploy with GitHub + Vercel (no build step)
-  1. Create an empty repo on GitHub (e.g. ihs-homepage) and push this folder:
-       git init && git add . && git commit -m "IHS homepage"
-       git branch -M main
-       git remote add origin https://github.com/<your-org>/ihs-homepage.git
-       git push -u origin main
-  2. On vercel.com choose Add New > Project > Import the repo.
-  3. Framework Preset: Other. Build Command: leave empty. Output Directory: leave empty (root). Click Deploy.
-  Every push to main then redeploys automatically.
+HOW TO RUN
+----------
+The page loads its photographs over HTTP, and the 3D map and interior
+views read them as WebGL textures. Opening index.html straight from the
+file system will block those textures (browser CORS rule for file://),
+so serve the folder instead:
 
-Other hosts
-  Netlify : drag this folder onto app.netlify.com/drop
-  Vercel  : run `vercel --prod` inside this folder
-  S3 / CDN / Nginx / Apache : upload index.html and img/ to the web root
+    python3 -m http.server 8000
 
-Needs internet access for two external resources:
-  Google Fonts (Plus Jakarta Sans) and the Motion One script from cdn.jsdelivr.net.
-  If your site uses a strict Content-Security-Policy, allow fonts.googleapis.com,
-  fonts.gstatic.com and cdn.jsdelivr.net.
+then open http://localhost:8000
 
-Before launch
-  - Replace the sample patient stories, doctor names and qualifications with verified content.
-  - Replace the sample article list with real articles and link the "Explore program" cards to program pages.
-  - Add the virtual tour video and wire the play button; add contact details in the footer.
-  - Connect the call-back form (it currently only shows a thank-you message; nothing is sent).
-  - Replace stock photography where licences are not confirmed.
+Everything else — layout, type, motion — works from the file system.
+
+WHAT LOADS FROM A CDN
+---------------------
+Motion One 10.18.0 ....... the animation engine (jsDelivr)
+three.js r128 ............ the 3D campus map and interior views (cdnjs)
+Instrument Serif, Hanken Grotesk ..... Google Fonts
+
+All three are pinned to exact versions. With no network the page still
+renders and reads correctly: motion is skipped, and the 3D views fall
+back to the flat photographs.
+
+NOTES FOR THE BUILD
+-------------------
+- Testimonials are sample copy and marked as such; they need real stories.
+- Two blog titles are the Figma placeholders.
+- The campus buildings on the map are indicative masses, not a survey.
+- Interiors are flat photographs mapped onto a curved segment. Supply 360
+  equirectangular shots and the same code renders them as true panoramas.
