@@ -8099,7 +8099,7 @@ literal 0
 HcmV?d00001
 
 diff --git a/index.html b/index.html
-index 9e30e3b..287d4d6 100644
+index 9e30e3b..f635029 100644
 --- a/index.html
 +++ b/index.html
 @@ -301,27 +301,48 @@ font:500 15.5px var(--sans);transition:background .22s,color .22s}
@@ -8172,7 +8172,30 @@ index 9e30e3b..287d4d6 100644
  /* enquiry */
  .enq{display:grid;grid-template-columns:1fr 1.04fr;align-items:stretch}
  .enq .l{background:linear-gradient(175deg,var(--peach) 0%,var(--orange) 80%);color:#2A1510;
-@@ -408,9 +429,9 @@ font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
+@@ -385,22 +406,7 @@ font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
+ <header>
+   <nav class="nav" aria-label="Primary">
+     <a class="brand" href="#top"><img src="i/logo.svg" alt="Isha">Health Solutions</a>
+-    <a class="l" href="#care">Therapeutic Care</a>
+-    <a class="l" href="#systems">Wellness Related</a>
+-    <a class="l" href="#approach">About Us</a>
+-    <a class="l" href="#env">Virtual Tour</a>
+-    <a class="btn btn-o" href="#enquire">Quick Booking</a>
+-    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Menu"><i></i><i></i><i></i></button>
+   </nav>
+-  <div class="menu" id="menu" data-open="false">
+-    <ul>
+-      <li><a href="#care">Therapeutic Care</a></li>
+-      <li><a href="#systems">Wellness Related</a></li>
+-      <li><a href="#approach">About Us</a></li>
+-      <li><a href="#env">Virtual Tour</a></li>
+-    </ul>
+-    <a class="btn btn-o" href="#enquire">Quick Booking</a>
+-  </div>
+ </header>
+ 
+ <main id="main">
+@@ -408,9 +414,9 @@ font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
  <div class="band" id="top"><div class="in flush">
    <div class="hero">
      <div class="ht">
@@ -8185,7 +8208,7 @@ index 9e30e3b..287d4d6 100644
      </div>
      <div class="hi"><img id="heroimg" src="i/e-campus.jpg" alt="The treatment wing at the Isha Yoga Centre, Coimbatore"></div>
    </div>
-@@ -420,8 +441,8 @@ font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
+@@ -420,8 +426,8 @@ font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
  
  <div class="band" id="care"><div class="in">
    <div class="hd c">
@@ -8196,7 +8219,7 @@ index 9e30e3b..287d4d6 100644
    </div>
    <div class="panels" id="panels"></div>
  </div></div>
-@@ -429,9 +450,9 @@ font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
+@@ -429,9 +435,9 @@ font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
  <div class="band putty"><div class="in">
    <div class="split">
      <div>
@@ -8209,7 +8232,7 @@ index 9e30e3b..287d4d6 100644
      </div>
      <div class="pic"><img src="img/pulse.jpg" alt="A practitioner reading a patient's pulse"></div>
    </div>
-@@ -440,17 +461,17 @@ font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
+@@ -440,17 +446,17 @@ font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
  <div class="band" id="systems"><div class="in">
    <div class="hd">
      <div>
@@ -8231,7 +8254,7 @@ index 9e30e3b..287d4d6 100644
    </div>
    <div class="jbody">
      <div class="rail" id="rail" role="tablist" aria-label="Steps" aria-orientation="vertical"></div>
-@@ -462,8 +483,8 @@ font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
+@@ -462,8 +468,8 @@ font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
  
  <div class="band" id="stories"><div class="in">
    <div class="hd c">
@@ -8242,7 +8265,7 @@ index 9e30e3b..287d4d6 100644
    </div>
  </div>
  <div class="stw" id="stw"><div class="strack" id="strack"></div></div>
-@@ -474,7 +495,7 @@ font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
+@@ -474,7 +480,7 @@ font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
      <div>
        <h2>Guided by Experience. Focused on Your Wellbeing.</h2>
      </div>
@@ -8251,7 +8274,7 @@ index 9e30e3b..287d4d6 100644
    </div>
    <div class="rx" id="drw" tabindex="0" role="group" aria-label="Practitioners"></div>
    <div class="cn"><span id="dn">01</span>
-@@ -485,7 +506,7 @@ font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
+@@ -485,7 +491,7 @@ font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
  <div class="band" id="env">
    <div class="in" style="padding-block:clamp(52px,6.4vw,92px) 0">
      <div class="hd" style="margin-bottom:34px">
@@ -8260,7 +8283,7 @@ index 9e30e3b..287d4d6 100644
        <p class="lede">The environment is part of the care, not an addition to it: quiet, unhurried, and built for rest. Turn the map to see how the centre is laid out, then step inside any building and look around.</p>
      </div>
      <div class="spaces" id="spaces" role="group" aria-label="Choose a space"></div>
-@@ -528,35 +549,45 @@ font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
+@@ -528,35 +534,45 @@ font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
    </div></div></div>
  </div>
  
@@ -8323,7 +8346,7 @@ index 9e30e3b..287d4d6 100644
        <button class="btn btn-o" type="submit" style="justify-content:center">Submit</button>
        <p class="ok" id="ok" role="status" aria-live="polite"></p>
      </form>
-@@ -566,9 +597,9 @@ font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
+@@ -566,9 +582,9 @@ font-size:14px;display:grid;gap:3px;visibility:hidden;pointer-events:none}
  <div class="band putty"><div class="in">
    <div class="hd">
      <div>
@@ -8335,7 +8358,16 @@ index 9e30e3b..287d4d6 100644
    </div>
    <div class="ins">
      <div class="acl" id="acl" role="tablist" aria-label="Articles"></div>
-@@ -622,7 +653,7 @@ function say(t,s){toast.innerHTML='<b></b><small></small>';
+@@ -612,7 +628,7 @@ function say(t,s){toast.innerHTML='<b></b><small></small>';
+  toast.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('on')},3600)}
+ 
+ /* ---- mobile menu --------------------------------------------------- */
+-(function(){var b=$('burger'),m=$('menu');
++(function(){var b=$('burger'),m=$('menu');if(!b||!m)return;
+  function set(open){b.setAttribute('aria-expanded',open);m.dataset.open=open;
+   if(open&&animate)animate(m.querySelectorAll('a'),{opacity:[0,1],transform:['translateY(-6px)','none']},
+    {duration:.3,delay:stagger(.04),easing:EASE})}
+@@ -622,7 +638,7 @@ function say(t,s){toast.innerHTML='<b></b><small></small>';
   addEventListener('resize',function(){if(innerWidth>1000)set(false)})})();
  
  /* ---- outcomes ------------------------------------------------------- */
@@ -8344,7 +8376,7 @@ index 9e30e3b..287d4d6 100644
  $('outs').innerHTML=OUT.map(function(o){
   return '<div class="out"><b data-to="'+o[0]+'" data-sfx="'+o[1]+'">'+o[0].toLocaleString('en-IN')+o[1]+'</b><span>'+o[2]+'</span></div>'}).join('');
  if(inView&&!RM){inView($('outs'),function(){
-@@ -635,7 +666,7 @@ if(inView&&!RM){inView($('outs'),function(){
+@@ -635,7 +651,7 @@ if(inView&&!RM){inView($('outs'),function(){
  /* ---- the four programs ----------------------------------------------- */
  var CARE=[
   {n:'Pain, Mobility &amp; Rehabilitation',img:'i/c-pain.jpg',mk:'01',alt:'A therapist working on a patient’s knee',
@@ -8353,7 +8385,7 @@ index 9e30e3b..287d4d6 100644
   {n:'Women’s Wellbeing',img:'i/c-women.jpg',mk:'02',alt:'A woman standing outdoors with her arms open',
    d:'Cycles, fertility, thyroid, the years around menopause: read as one continuous story rather than separate complaints. We look for the pattern underneath before treating anything, because the same diagnosis rarely has the same cause twice.'},
   {n:'Cancer Support &amp; Recovery',img:'i/c-cancer.jpg',mk:'03',alt:'A person resting during treatment',
-@@ -669,7 +700,7 @@ $('panels').addEventListener('mouseover',function(e){
+@@ -669,7 +685,7 @@ $('panels').addEventListener('mouseover',function(e){
  var SYS=[
   ['a','Ayurveda','i/s-ayur.jpg','Ayurvedic preparations and herbs on a worktable',
    'Therapies, formulations and diet, chosen for your constitution.',
@@ -8362,7 +8394,7 @@ index 9e30e3b..287d4d6 100644
   ['b','Siddha','i/s-siddha.jpg','A Siddha inhalation therapy in progress',
    'A second reading of the same body, through the pulse.',
    'One of the oldest traditions of this land, with its own diagnosis and its own preparations. We turn to it when a condition has not moved under anything else we have tried.'],
-@@ -706,7 +737,7 @@ $('bento').innerHTML=SYS.map(function(s,i){return '<article class="sy '+s[0]+'"
+@@ -706,7 +722,7 @@ $('bento').innerHTML=SYS.map(function(s,i){return '<article class="sy '+s[0]+'"
  /* ---- how you will experience it: illustrations from the Figma ---------- */
  var JR=[
   {t:'Discover',s:'Step one',ill:'i/jill.svg',
@@ -8371,7 +8403,7 @@ index 9e30e3b..287d4d6 100644
   {t:'Consult',s:'Step two',ill:'i/st2.png',
    d:'A doctor reads your case and sits with you, in person or online. You are listened to before you are advised, and you leave knowing what your condition calls for, what it would ask of you, and whether this is the right place.'},
   {t:'Treat',s:'Step three',ill:'i/st3.png',
-@@ -1124,11 +1155,11 @@ feat(0);
+@@ -1124,11 +1140,11 @@ feat(0);
  
  /* ---- faq: the Figma supplies the answers --------------------------------- */
  var FAQ=[
@@ -8388,7 +8420,7 @@ index 9e30e3b..287d4d6 100644
  $('faqlist').innerHTML=FAQ.map(function(f,i){return '<details name="faq"'+(i===0?' open':'')+'>'+
   '<summary><span class="q"></span><span class="ax" aria-hidden="true">+</span></summary><div class="ans"></div></details>'}).join('');
  [].forEach.call($('faqlist').children,function(d,i){
-@@ -1154,53 +1185,65 @@ if(inView&&animate){
+@@ -1154,53 +1170,65 @@ if(inView&&animate){
       {duration:.55,delay:stagger(.06),easing:EASE})},{margin:'-60px 0px -8% 0px'})})});
   setTimeout(function(){[].forEach.call(document.querySelectorAll('.pre'),function(e){e.classList.remove('pre')})},4000)}
  
